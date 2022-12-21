@@ -52,7 +52,7 @@ of this resource is supported. It must be named &ldquo;tigera-secure&rdquo;.</p>
 <tbody>
 <tr>
 <td>
-<code>apiVersion</code><br>
+<code>apiVersion</code><br/>
 string</td>
 <td>
 <code>
@@ -62,14 +62,14 @@ operator.tigera.io/v1
 </tr>
 <tr>
 <td>
-<code>kind</code><br>
+<code>kind</code><br/>
 string
 </td>
 <td><code>APIServer</code></td>
 </tr>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#objectmeta-v1-meta">
 Kubernetes meta/v1.ObjectMeta
@@ -83,7 +83,7 @@ Refer to the Kubernetes API documentation for the fields of the
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.APIServerSpec">
 APIServerSpec
@@ -97,7 +97,7 @@ APIServerSpec
 <table>
 <tr>
 <td>
-<code>apiServerDeployment</code><br>
+<code>apiServerDeployment</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.APIServerDeployment">
 APIServerDeployment
@@ -115,7 +115,7 @@ take precedence.</p>
 </tr>
 <tr>
 <td>
-<code>status</code><br>
+<code>status</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.APIServerStatus">
 APIServerStatus
@@ -141,7 +141,7 @@ APIServerStatus
 <tbody>
 <tr>
 <td>
-<code>apiVersion</code><br>
+<code>apiVersion</code><br/>
 string</td>
 <td>
 <code>
@@ -151,14 +151,14 @@ operator.tigera.io/v1
 </tr>
 <tr>
 <td>
-<code>kind</code><br>
+<code>kind</code><br/>
 string
 </td>
 <td><code>AmazonCloudIntegration</code></td>
 </tr>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#objectmeta-v1-meta">
 Kubernetes meta/v1.ObjectMeta
@@ -172,7 +172,7 @@ Refer to the Kubernetes API documentation for the fields of the
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.AmazonCloudIntegrationSpec">
 AmazonCloudIntegrationSpec
@@ -185,7 +185,7 @@ AmazonCloudIntegrationSpec
 <table>
 <tr>
 <td>
-<code>defaultPodMetadataAccess</code><br>
+<code>defaultPodMetadataAccess</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.MetadataAccessAllowedType">
 MetadataAccessAllowedType
@@ -201,7 +201,7 @@ Default: Denied</p>
 </tr>
 <tr>
 <td>
-<code>nodeSecurityGroupIDs</code><br>
+<code>nodeSecurityGroupIDs</code><br/>
 <em>
 []string
 </em>
@@ -213,7 +213,7 @@ will be in.</p>
 </tr>
 <tr>
 <td>
-<code>podSecurityGroupID</code><br>
+<code>podSecurityGroupID</code><br/>
 <em>
 string
 </em>
@@ -225,7 +225,7 @@ in by default.</p>
 </tr>
 <tr>
 <td>
-<code>vpcs</code><br>
+<code>vpcs</code><br/>
 <em>
 []string
 </em>
@@ -236,7 +236,7 @@ in by default.</p>
 </tr>
 <tr>
 <td>
-<code>sqsURL</code><br>
+<code>sqsURL</code><br/>
 <em>
 string
 </em>
@@ -247,7 +247,7 @@ string
 </tr>
 <tr>
 <td>
-<code>awsRegion</code><br>
+<code>awsRegion</code><br/>
 <em>
 string
 </em>
@@ -258,7 +258,7 @@ string
 </tr>
 <tr>
 <td>
-<code>enforcedSecurityGroupID</code><br>
+<code>enforcedSecurityGroupID</code><br/>
 <em>
 string
 </em>
@@ -270,7 +270,7 @@ ENIs that are on a host that is also part of the Kubernetes cluster.</p>
 </tr>
 <tr>
 <td>
-<code>trustEnforcedSecurityGroupID</code><br>
+<code>trustEnforcedSecurityGroupID</code><br/>
 <em>
 string
 </em>
@@ -285,7 +285,7 @@ to all ENIs in the VPC.</p>
 </tr>
 <tr>
 <td>
-<code>status</code><br>
+<code>status</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.AmazonCloudIntegrationStatus">
 AmazonCloudIntegrationStatus
@@ -310,7 +310,7 @@ AmazonCloudIntegrationStatus
 <tbody>
 <tr>
 <td>
-<code>apiVersion</code><br>
+<code>apiVersion</code><br/>
 string</td>
 <td>
 <code>
@@ -320,14 +320,14 @@ operator.tigera.io/v1
 </tr>
 <tr>
 <td>
-<code>kind</code><br>
+<code>kind</code><br/>
 string
 </td>
 <td><code>ApplicationLayer</code></td>
 </tr>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#objectmeta-v1-meta">
 Kubernetes meta/v1.ObjectMeta
@@ -341,7 +341,7 @@ Refer to the Kubernetes API documentation for the fields of the
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.ApplicationLayerSpec">
 ApplicationLayerSpec
@@ -354,7 +354,7 @@ ApplicationLayerSpec
 <table>
 <tr>
 <td>
-<code>webApplicationFirewall</code><br>
+<code>webApplicationFirewall</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.WAFStatusType">
 WAFStatusType
@@ -368,7 +368,7 @@ When enabled, Services may opt-in to having ingress traffic examed by ModSecurit
 </tr>
 <tr>
 <td>
-<code>logCollection</code><br>
+<code>logCollection</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.LogCollectionSpec">
 LogCollectionSpec
@@ -384,7 +384,7 @@ LogCollectionSpec
 </tr>
 <tr>
 <td>
-<code>status</code><br>
+<code>status</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.ApplicationLayerStatus">
 ApplicationLayerStatus
@@ -409,7 +409,7 @@ ApplicationLayerStatus
 <tbody>
 <tr>
 <td>
-<code>apiVersion</code><br>
+<code>apiVersion</code><br/>
 string</td>
 <td>
 <code>
@@ -419,14 +419,14 @@ operator.tigera.io/v1
 </tr>
 <tr>
 <td>
-<code>kind</code><br>
+<code>kind</code><br/>
 string
 </td>
 <td><code>Authentication</code></td>
 </tr>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#objectmeta-v1-meta">
 Kubernetes meta/v1.ObjectMeta
@@ -440,7 +440,7 @@ Refer to the Kubernetes API documentation for the fields of the
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.AuthenticationSpec">
 AuthenticationSpec
@@ -453,7 +453,7 @@ AuthenticationSpec
 <table>
 <tr>
 <td>
-<code>managerDomain</code><br>
+<code>managerDomain</code><br/>
 <em>
 string
 </em>
@@ -464,7 +464,7 @@ string
 </tr>
 <tr>
 <td>
-<code>usernamePrefix</code><br>
+<code>usernamePrefix</code><br/>
 <em>
 string
 </em>
@@ -478,7 +478,7 @@ ClusterRoleBindings into Elastic.</p>
 </tr>
 <tr>
 <td>
-<code>groupsPrefix</code><br>
+<code>groupsPrefix</code><br/>
 <em>
 string
 </em>
@@ -492,7 +492,7 @@ ClusterRoleBindings into Elastic.</p>
 </tr>
 <tr>
 <td>
-<code>oidc</code><br>
+<code>oidc</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.AuthenticationOIDC">
 AuthenticationOIDC
@@ -506,7 +506,7 @@ AuthenticationOIDC
 </tr>
 <tr>
 <td>
-<code>openshift</code><br>
+<code>openshift</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.AuthenticationOpenshift">
 AuthenticationOpenshift
@@ -520,7 +520,7 @@ AuthenticationOpenshift
 </tr>
 <tr>
 <td>
-<code>ldap</code><br>
+<code>ldap</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.AuthenticationLDAP">
 AuthenticationLDAP
@@ -537,7 +537,7 @@ AuthenticationLDAP
 </tr>
 <tr>
 <td>
-<code>status</code><br>
+<code>status</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.AuthenticationStatus">
 AuthenticationStatus
@@ -563,7 +563,7 @@ of this resource is supported. It must be named &ldquo;tigera-secure&rdquo;.</p>
 <tbody>
 <tr>
 <td>
-<code>apiVersion</code><br>
+<code>apiVersion</code><br/>
 string</td>
 <td>
 <code>
@@ -573,14 +573,14 @@ operator.tigera.io/v1
 </tr>
 <tr>
 <td>
-<code>kind</code><br>
+<code>kind</code><br/>
 string
 </td>
 <td><code>Compliance</code></td>
 </tr>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#objectmeta-v1-meta">
 Kubernetes meta/v1.ObjectMeta
@@ -594,7 +594,7 @@ Refer to the Kubernetes API documentation for the fields of the
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.ComplianceSpec">
 ComplianceSpec
@@ -611,7 +611,7 @@ ComplianceSpec
 </tr>
 <tr>
 <td>
-<code>status</code><br>
+<code>status</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.ComplianceStatus">
 ComplianceStatus
@@ -642,7 +642,7 @@ this version can be obtained by passing the <code>--version</code> flag to the o
 <tbody>
 <tr>
 <td>
-<code>apiVersion</code><br>
+<code>apiVersion</code><br/>
 string</td>
 <td>
 <code>
@@ -652,14 +652,14 @@ operator.tigera.io/v1
 </tr>
 <tr>
 <td>
-<code>kind</code><br>
+<code>kind</code><br/>
 string
 </td>
 <td><code>ImageSet</code></td>
 </tr>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#objectmeta-v1-meta">
 Kubernetes meta/v1.ObjectMeta
@@ -673,7 +673,7 @@ Refer to the Kubernetes API documentation for the fields of the
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.ImageSetSpec">
 ImageSetSpec
@@ -686,7 +686,7 @@ ImageSetSpec
 <table>
 <tr>
 <td>
-<code>images</code><br>
+<code>images</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Image">
 []Image
@@ -718,7 +718,7 @@ and network policy components, and provides general install-time configuration.<
 <tbody>
 <tr>
 <td>
-<code>apiVersion</code><br>
+<code>apiVersion</code><br/>
 string</td>
 <td>
 <code>
@@ -728,14 +728,14 @@ operator.tigera.io/v1
 </tr>
 <tr>
 <td>
-<code>kind</code><br>
+<code>kind</code><br/>
 string
 </td>
 <td><code>Installation</code></td>
 </tr>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#objectmeta-v1-meta">
 Kubernetes meta/v1.ObjectMeta
@@ -749,7 +749,7 @@ Refer to the Kubernetes API documentation for the fields of the
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.InstallationSpec">
 InstallationSpec
@@ -763,7 +763,7 @@ InstallationSpec
 <table>
 <tr>
 <td>
-<code>variant</code><br>
+<code>variant</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.ProductVariant">
 ProductVariant
@@ -778,7 +778,7 @@ Default: Calico</p>
 </tr>
 <tr>
 <td>
-<code>registry</code><br>
+<code>registry</code><br/>
 <em>
 string
 </em>
@@ -796,7 +796,7 @@ supported to explicitly specify the default registries will be used.</p>
 </tr>
 <tr>
 <td>
-<code>imagePath</code><br>
+<code>imagePath</code><br/>
 <em>
 string
 </em>
@@ -815,7 +815,7 @@ image path will be used for each image.</p>
 </tr>
 <tr>
 <td>
-<code>imagePrefix</code><br>
+<code>imagePrefix</code><br/>
 <em>
 string
 </em>
@@ -834,7 +834,7 @@ image prefix will be used for each image.</p>
 </tr>
 <tr>
 <td>
-<code>imagePullSecrets</code><br>
+<code>imagePullSecrets</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#localobjectreference-v1-core">
 []Kubernetes core/v1.LocalObjectReference
@@ -849,7 +849,7 @@ applied to all images to be pulled.</p>
 </tr>
 <tr>
 <td>
-<code>kubernetesProvider</code><br>
+<code>kubernetesProvider</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Provider">
 Provider
@@ -866,7 +866,7 @@ will additionally compare the auto-detected value to the specified value to conf
 </tr>
 <tr>
 <td>
-<code>cni</code><br>
+<code>cni</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CNISpec">
 CNISpec
@@ -880,7 +880,7 @@ CNISpec
 </tr>
 <tr>
 <td>
-<code>calicoNetwork</code><br>
+<code>calicoNetwork</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CalicoNetworkSpec">
 CalicoNetworkSpec
@@ -894,7 +894,7 @@ CalicoNetworkSpec
 </tr>
 <tr>
 <td>
-<code>typhaAffinity</code><br>
+<code>typhaAffinity</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.TyphaAffinity">
 TyphaAffinity
@@ -909,7 +909,7 @@ TyphaAffinity allows configuration of node affinity characteristics for Typha po
 </tr>
 <tr>
 <td>
-<code>controlPlaneNodeSelector</code><br>
+<code>controlPlaneNodeSelector</code><br/>
 <em>
 map[string]string
 </em>
@@ -922,7 +922,7 @@ components. This is globally applied to all resources created by the operator ex
 </tr>
 <tr>
 <td>
-<code>controlPlaneTolerations</code><br>
+<code>controlPlaneTolerations</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#toleration-v1-core">
 []Kubernetes core/v1.Toleration
@@ -937,7 +937,7 @@ created by the operator.</p>
 </tr>
 <tr>
 <td>
-<code>controlPlaneReplicas</code><br>
+<code>controlPlaneReplicas</code><br/>
 <em>
 int32
 </em>
@@ -950,7 +950,7 @@ This field applies to all control plane components that support High Availabilit
 </tr>
 <tr>
 <td>
-<code>nodeMetricsPort</code><br>
+<code>nodeMetricsPort</code><br/>
 <em>
 int32
 </em>
@@ -964,7 +964,7 @@ prometheus metrics may still be configured through FelixConfiguration.</p>
 </tr>
 <tr>
 <td>
-<code>typhaMetricsPort</code><br>
+<code>typhaMetricsPort</code><br/>
 <em>
 int32
 </em>
@@ -976,7 +976,7 @@ int32
 </tr>
 <tr>
 <td>
-<code>flexVolumePath</code><br>
+<code>flexVolumePath</code><br/>
 <em>
 string
 </em>
@@ -990,7 +990,7 @@ kubernetesProvider.</p>
 </tr>
 <tr>
 <td>
-<code>kubeletVolumePluginPath</code><br>
+<code>kubeletVolumePluginPath</code><br/>
 <em>
 string
 </em>
@@ -1004,7 +1004,7 @@ Default: /var/lib/kubelet</p>
 </tr>
 <tr>
 <td>
-<code>nodeUpdateStrategy</code><br>
+<code>nodeUpdateStrategy</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#daemonsetupdatestrategy-v1-apps">
 Kubernetes apps/v1.DaemonSetUpdateStrategy
@@ -1019,7 +1019,7 @@ field.</p>
 </tr>
 <tr>
 <td>
-<code>componentResources</code><br>
+<code>componentResources</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.ComponentResource">
 []ComponentResource
@@ -1035,7 +1035,7 @@ Node, Typha, and KubeControllers are supported for installations.</p>
 </tr>
 <tr>
 <td>
-<code>certificateManagement</code><br>
+<code>certificateManagement</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CertificateManagement">
 CertificateManagement
@@ -1051,7 +1051,7 @@ pods will be stuck during initialization.</p>
 </tr>
 <tr>
 <td>
-<code>nonPrivileged</code><br>
+<code>nonPrivileged</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.NonPrivilegedType">
 NonPrivilegedType
@@ -1065,7 +1065,7 @@ NonPrivilegedType
 </tr>
 <tr>
 <td>
-<code>calicoNodeDaemonSet</code><br>
+<code>calicoNodeDaemonSet</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CalicoNodeDaemonSet">
 CalicoNodeDaemonSet
@@ -1079,7 +1079,7 @@ conjunction with the deprecated ComponentResources, then these overrides take pr
 </tr>
 <tr>
 <td>
-<code>calicoKubeControllersDeployment</code><br>
+<code>calicoKubeControllersDeployment</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CalicoKubeControllersDeployment">
 CalicoKubeControllersDeployment
@@ -1093,7 +1093,7 @@ conjunction with the deprecated ComponentResources, then these overrides take pr
 </tr>
 <tr>
 <td>
-<code>typhaDeployment</code><br>
+<code>typhaDeployment</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.TyphaDeployment">
 TyphaDeployment
@@ -1107,7 +1107,7 @@ ComponentResources or TyphaAffinity, then these overrides take precedence.</p>
 </tr>
 <tr>
 <td>
-<code>calicoWindowsUpgradeDaemonSet</code><br>
+<code>calicoWindowsUpgradeDaemonSet</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CalicoWindowsUpgradeDaemonSet">
 CalicoWindowsUpgradeDaemonSet
@@ -1120,7 +1120,7 @@ CalicoWindowsUpgradeDaemonSet
 </tr>
 <tr>
 <td>
-<code>fipsMode</code><br>
+<code>fipsMode</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.FIPSMode">
 FIPSMode
@@ -1138,7 +1138,7 @@ Default: Disabled</p>
 </tr>
 <tr>
 <td>
-<code>status</code><br>
+<code>status</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.InstallationStatus">
 InstallationStatus
@@ -1165,7 +1165,7 @@ of this resource is supported. It must be named &ldquo;tigera-secure&rdquo;.</p>
 <tbody>
 <tr>
 <td>
-<code>apiVersion</code><br>
+<code>apiVersion</code><br/>
 string</td>
 <td>
 <code>
@@ -1175,14 +1175,14 @@ operator.tigera.io/v1
 </tr>
 <tr>
 <td>
-<code>kind</code><br>
+<code>kind</code><br/>
 string
 </td>
 <td><code>IntrusionDetection</code></td>
 </tr>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#objectmeta-v1-meta">
 Kubernetes meta/v1.ObjectMeta
@@ -1196,7 +1196,7 @@ Refer to the Kubernetes API documentation for the fields of the
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.IntrusionDetectionSpec">
 IntrusionDetectionSpec
@@ -1210,7 +1210,7 @@ IntrusionDetectionSpec
 <table>
 <tr>
 <td>
-<code>componentResources</code><br>
+<code>componentResources</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.IntrusionDetectionComponentResource">
 []IntrusionDetectionComponentResource
@@ -1225,7 +1225,7 @@ Only DeepPacketInspection is supported for this spec.</p>
 </tr>
 <tr>
 <td>
-<code>anomalyDetection</code><br>
+<code>anomalyDetection</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.AnomalyDetectionSpec">
 AnomalyDetectionSpec
@@ -1244,7 +1244,7 @@ management clusters.</p>
 </tr>
 <tr>
 <td>
-<code>status</code><br>
+<code>status</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.IntrusionDetectionStatus">
 IntrusionDetectionStatus
@@ -1272,7 +1272,7 @@ configured to collect Tigera log data and export it to Tigera&rsquo;s Elasticsea
 <tbody>
 <tr>
 <td>
-<code>apiVersion</code><br>
+<code>apiVersion</code><br/>
 string</td>
 <td>
 <code>
@@ -1282,14 +1282,14 @@ operator.tigera.io/v1
 </tr>
 <tr>
 <td>
-<code>kind</code><br>
+<code>kind</code><br/>
 string
 </td>
 <td><code>LogCollector</code></td>
 </tr>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#objectmeta-v1-meta">
 Kubernetes meta/v1.ObjectMeta
@@ -1303,7 +1303,7 @@ Refer to the Kubernetes API documentation for the fields of the
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.LogCollectorSpec">
 LogCollectorSpec
@@ -1317,7 +1317,7 @@ LogCollectorSpec
 <table>
 <tr>
 <td>
-<code>additionalStores</code><br>
+<code>additionalStores</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.AdditionalLogStoreSpec">
 AdditionalLogStoreSpec
@@ -1331,7 +1331,7 @@ AdditionalLogStoreSpec
 </tr>
 <tr>
 <td>
-<code>additionalSources</code><br>
+<code>additionalSources</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.AdditionalLogSourceSpec">
 AdditionalLogSourceSpec
@@ -1345,7 +1345,7 @@ AdditionalLogSourceSpec
 </tr>
 <tr>
 <td>
-<code>collectProcessPath</code><br>
+<code>collectProcessPath</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CollectProcessPathOption">
 CollectProcessPathOption
@@ -1364,7 +1364,7 @@ Default: Enabled</p>
 </tr>
 <tr>
 <td>
-<code>status</code><br>
+<code>status</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.LogCollectorStatus">
 LogCollectorStatus
@@ -1392,7 +1392,7 @@ Calico Enterprise.</p>
 <tbody>
 <tr>
 <td>
-<code>apiVersion</code><br>
+<code>apiVersion</code><br/>
 string</td>
 <td>
 <code>
@@ -1402,14 +1402,14 @@ operator.tigera.io/v1
 </tr>
 <tr>
 <td>
-<code>kind</code><br>
+<code>kind</code><br/>
 string
 </td>
 <td><code>LogStorage</code></td>
 </tr>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#objectmeta-v1-meta">
 Kubernetes meta/v1.ObjectMeta
@@ -1423,7 +1423,7 @@ Refer to the Kubernetes API documentation for the fields of the
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.LogStorageSpec">
 LogStorageSpec
@@ -1437,7 +1437,7 @@ LogStorageSpec
 <table>
 <tr>
 <td>
-<code>nodes</code><br>
+<code>nodes</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Nodes">
 Nodes
@@ -1450,7 +1450,7 @@ Nodes
 </tr>
 <tr>
 <td>
-<code>indices</code><br>
+<code>indices</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Indices">
 Indices
@@ -1464,7 +1464,7 @@ Indices
 </tr>
 <tr>
 <td>
-<code>retention</code><br>
+<code>retention</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Retention">
 Retention
@@ -1478,7 +1478,7 @@ Retention
 </tr>
 <tr>
 <td>
-<code>storageClassName</code><br>
+<code>storageClassName</code><br/>
 <em>
 string
 </em>
@@ -1494,7 +1494,7 @@ Default: tigera-elasticsearch</p>
 </tr>
 <tr>
 <td>
-<code>dataNodeSelector</code><br>
+<code>dataNodeSelector</code><br/>
 <em>
 map[string]string
 </em>
@@ -1508,7 +1508,7 @@ each of the indicated key-value pairs as labels as well as access to the specifi
 </tr>
 <tr>
 <td>
-<code>componentResources</code><br>
+<code>componentResources</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.LogStorageComponentResource">
 []LogStorageComponentResource
@@ -1526,7 +1526,7 @@ Only ECKOperator is supported for this spec.</p>
 </tr>
 <tr>
 <td>
-<code>status</code><br>
+<code>status</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.LogStorageStatus">
 LogStorageStatus
@@ -1553,7 +1553,7 @@ clusters can connect. At most one instance of this resource is supported. It mus
 <tbody>
 <tr>
 <td>
-<code>apiVersion</code><br>
+<code>apiVersion</code><br/>
 string</td>
 <td>
 <code>
@@ -1563,14 +1563,14 @@ operator.tigera.io/v1
 </tr>
 <tr>
 <td>
-<code>kind</code><br>
+<code>kind</code><br/>
 string
 </td>
 <td><code>ManagementCluster</code></td>
 </tr>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#objectmeta-v1-meta">
 Kubernetes meta/v1.ObjectMeta
@@ -1584,7 +1584,7 @@ Refer to the Kubernetes API documentation for the fields of the
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.ManagementClusterSpec">
 ManagementClusterSpec
@@ -1597,7 +1597,7 @@ ManagementClusterSpec
 <table>
 <tr>
 <td>
-<code>address</code><br>
+<code>address</code><br/>
 <em>
 string
 </em>
@@ -1611,7 +1611,7 @@ Valid examples are: &ldquo;0.0.0.0:31000&rdquo;, &ldquo;example.com:32000&rdquo;
 </tr>
 <tr>
 <td>
-<code>tls</code><br>
+<code>tls</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.TLS">
 TLS
@@ -1642,7 +1642,7 @@ instance of this resource is supported. It must be named &ldquo;tigera-secure&rd
 <tbody>
 <tr>
 <td>
-<code>apiVersion</code><br>
+<code>apiVersion</code><br/>
 string</td>
 <td>
 <code>
@@ -1652,14 +1652,14 @@ operator.tigera.io/v1
 </tr>
 <tr>
 <td>
-<code>kind</code><br>
+<code>kind</code><br/>
 string
 </td>
 <td><code>ManagementClusterConnection</code></td>
 </tr>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#objectmeta-v1-meta">
 Kubernetes meta/v1.ObjectMeta
@@ -1673,7 +1673,7 @@ Refer to the Kubernetes API documentation for the fields of the
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.ManagementClusterConnectionSpec">
 ManagementClusterConnectionSpec
@@ -1686,7 +1686,7 @@ ManagementClusterConnectionSpec
 <table>
 <tr>
 <td>
-<code>managementClusterAddr</code><br>
+<code>managementClusterAddr</code><br/>
 <em>
 string
 </em>
@@ -1699,7 +1699,7 @@ should be able to access this address. This field is used by managed clusters on
 </tr>
 <tr>
 <td>
-<code>tls</code><br>
+<code>tls</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.ManagementClusterTLS">
 ManagementClusterTLS
@@ -1730,7 +1730,7 @@ of this resource is supported. It must be named &ldquo;tigera-secure&rdquo;.</p>
 <tbody>
 <tr>
 <td>
-<code>apiVersion</code><br>
+<code>apiVersion</code><br/>
 string</td>
 <td>
 <code>
@@ -1740,14 +1740,14 @@ operator.tigera.io/v1
 </tr>
 <tr>
 <td>
-<code>kind</code><br>
+<code>kind</code><br/>
 string
 </td>
 <td><code>Manager</code></td>
 </tr>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#objectmeta-v1-meta">
 Kubernetes meta/v1.ObjectMeta
@@ -1761,7 +1761,7 @@ Refer to the Kubernetes API documentation for the fields of the
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.ManagerSpec">
 ManagerSpec
@@ -1775,7 +1775,7 @@ ManagerSpec
 <table>
 <tr>
 <td>
-<code>auth</code><br>
+<code>auth</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Auth">
 Auth
@@ -1792,7 +1792,7 @@ Auth
 </tr>
 <tr>
 <td>
-<code>status</code><br>
+<code>status</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.ManagerStatus">
 ManagerStatus
@@ -1819,7 +1819,7 @@ of this resource is supported. It must be named &ldquo;tigera-secure&rdquo;.</p>
 <tbody>
 <tr>
 <td>
-<code>apiVersion</code><br>
+<code>apiVersion</code><br/>
 string</td>
 <td>
 <code>
@@ -1829,14 +1829,14 @@ operator.tigera.io/v1
 </tr>
 <tr>
 <td>
-<code>kind</code><br>
+<code>kind</code><br/>
 string
 </td>
 <td><code>Monitor</code></td>
 </tr>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#objectmeta-v1-meta">
 Kubernetes meta/v1.ObjectMeta
@@ -1850,7 +1850,7 @@ Refer to the Kubernetes API documentation for the fields of the
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.MonitorSpec">
 MonitorSpec
@@ -1866,7 +1866,7 @@ MonitorSpec
 </tr>
 <tr>
 <td>
-<code>status</code><br>
+<code>status</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.MonitorStatus">
 MonitorStatus
@@ -1891,7 +1891,7 @@ MonitorStatus
 <tbody>
 <tr>
 <td>
-<code>apiVersion</code><br>
+<code>apiVersion</code><br/>
 string</td>
 <td>
 <code>
@@ -1901,14 +1901,14 @@ operator.tigera.io/v1
 </tr>
 <tr>
 <td>
-<code>kind</code><br>
+<code>kind</code><br/>
 string
 </td>
 <td><code>TigeraStatus</code></td>
 </tr>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#objectmeta-v1-meta">
 Kubernetes meta/v1.ObjectMeta
@@ -1922,7 +1922,7 @@ Refer to the Kubernetes API documentation for the fields of the
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.TigeraStatusSpec">
 TigeraStatusSpec
@@ -1938,7 +1938,7 @@ TigeraStatusSpec
 </tr>
 <tr>
 <td>
-<code>status</code><br>
+<code>status</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.TigeraStatusStatus">
 TigeraStatusStatus
@@ -1967,7 +1967,7 @@ TigeraStatusStatus
 <tbody>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Metadata">
 Metadata
@@ -1981,7 +1981,7 @@ Metadata
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.APIServerDeploymentSpec">
 APIServerDeploymentSpec
@@ -2016,7 +2016,7 @@ APIServerDeploymentSpec
 <tbody>
 <tr>
 <td>
-<code>name</code><br>
+<code>name</code><br/>
 <em>
 string
 </em>
@@ -2027,7 +2027,7 @@ string
 </tr>
 <tr>
 <td>
-<code>resources</code><br>
+<code>resources</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#resourcerequirements-v1-core">
 Kubernetes core/v1.ResourceRequirements
@@ -2061,7 +2061,7 @@ If used in conjunction with the deprecated ComponentResources, then this value t
 <tbody>
 <tr>
 <td>
-<code>name</code><br>
+<code>name</code><br/>
 <em>
 string
 </em>
@@ -2072,7 +2072,7 @@ string
 </tr>
 <tr>
 <td>
-<code>resources</code><br>
+<code>resources</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#resourcerequirements-v1-core">
 Kubernetes core/v1.ResourceRequirements
@@ -2105,7 +2105,7 @@ If omitted, the API server Deployment will use its default value for this init c
 <tbody>
 <tr>
 <td>
-<code>initContainers</code><br>
+<code>initContainers</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.APIServerDeploymentInitContainer">
 []APIServerDeploymentInitContainer
@@ -2121,7 +2121,7 @@ If omitted, the API server Deployment will use its default values for its init c
 </tr>
 <tr>
 <td>
-<code>containers</code><br>
+<code>containers</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.APIServerDeploymentContainer">
 []APIServerDeploymentContainer
@@ -2137,7 +2137,7 @@ If omitted, the API server Deployment will use its default values for its contai
 </tr>
 <tr>
 <td>
-<code>affinity</code><br>
+<code>affinity</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#affinity-v1-core">
 Kubernetes core/v1.Affinity
@@ -2154,7 +2154,7 @@ WARNING: Please note that this field will override the default API server Deploy
 </tr>
 <tr>
 <td>
-<code>nodeSelector</code><br>
+<code>nodeSelector</code><br/>
 <em>
 map[string]string
 </em>
@@ -2172,7 +2172,7 @@ WARNING: Please note that this field will modify the default API server Deployme
 </tr>
 <tr>
 <td>
-<code>tolerations</code><br>
+<code>tolerations</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#toleration-v1-core">
 []Kubernetes core/v1.Toleration
@@ -2206,7 +2206,7 @@ WARNING: Please note that this field will override the default API server Deploy
 <tbody>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Metadata">
 Metadata
@@ -2221,7 +2221,7 @@ the pod&rsquo;s metadata.</p>
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.APIServerDeploymentPodSpec">
 APIServerDeploymentPodSpec
@@ -2256,7 +2256,7 @@ APIServerDeploymentPodSpec
 <tbody>
 <tr>
 <td>
-<code>minReadySeconds</code><br>
+<code>minReadySeconds</code><br/>
 <em>
 int32
 </em>
@@ -2271,7 +2271,7 @@ If omitted, the API server Deployment will use its default value for minReadySec
 </tr>
 <tr>
 <td>
-<code>template</code><br>
+<code>template</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.APIServerDeploymentPodTemplateSpec">
 APIServerDeploymentPodTemplateSpec
@@ -2302,7 +2302,7 @@ APIServerDeploymentPodTemplateSpec
 <tbody>
 <tr>
 <td>
-<code>apiServerDeployment</code><br>
+<code>apiServerDeployment</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.APIServerDeployment">
 APIServerDeployment
@@ -2334,7 +2334,7 @@ take precedence.</p>
 <tbody>
 <tr>
 <td>
-<code>state</code><br>
+<code>state</code><br/>
 <em>
 string
 </em>
@@ -2361,7 +2361,7 @@ string
 <tbody>
 <tr>
 <td>
-<code>eksCloudwatchLog</code><br>
+<code>eksCloudwatchLog</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.EksCloudwatchLogsSpec">
 EksCloudwatchLogsSpec
@@ -2392,7 +2392,7 @@ audit logs.</p>
 <tbody>
 <tr>
 <td>
-<code>s3</code><br>
+<code>s3</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.S3StoreSpec">
 S3StoreSpec
@@ -2406,7 +2406,7 @@ S3StoreSpec
 </tr>
 <tr>
 <td>
-<code>syslog</code><br>
+<code>syslog</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.SyslogStoreSpec">
 SyslogStoreSpec
@@ -2420,7 +2420,7 @@ SyslogStoreSpec
 </tr>
 <tr>
 <td>
-<code>splunk</code><br>
+<code>splunk</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.SplunkStoreSpec">
 SplunkStoreSpec
@@ -2451,7 +2451,7 @@ SplunkStoreSpec
 <tbody>
 <tr>
 <td>
-<code>defaultPodMetadataAccess</code><br>
+<code>defaultPodMetadataAccess</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.MetadataAccessAllowedType">
 MetadataAccessAllowedType
@@ -2467,7 +2467,7 @@ Default: Denied</p>
 </tr>
 <tr>
 <td>
-<code>nodeSecurityGroupIDs</code><br>
+<code>nodeSecurityGroupIDs</code><br/>
 <em>
 []string
 </em>
@@ -2479,7 +2479,7 @@ will be in.</p>
 </tr>
 <tr>
 <td>
-<code>podSecurityGroupID</code><br>
+<code>podSecurityGroupID</code><br/>
 <em>
 string
 </em>
@@ -2491,7 +2491,7 @@ in by default.</p>
 </tr>
 <tr>
 <td>
-<code>vpcs</code><br>
+<code>vpcs</code><br/>
 <em>
 []string
 </em>
@@ -2502,7 +2502,7 @@ in by default.</p>
 </tr>
 <tr>
 <td>
-<code>sqsURL</code><br>
+<code>sqsURL</code><br/>
 <em>
 string
 </em>
@@ -2513,7 +2513,7 @@ string
 </tr>
 <tr>
 <td>
-<code>awsRegion</code><br>
+<code>awsRegion</code><br/>
 <em>
 string
 </em>
@@ -2524,7 +2524,7 @@ string
 </tr>
 <tr>
 <td>
-<code>enforcedSecurityGroupID</code><br>
+<code>enforcedSecurityGroupID</code><br/>
 <em>
 string
 </em>
@@ -2536,7 +2536,7 @@ ENIs that are on a host that is also part of the Kubernetes cluster.</p>
 </tr>
 <tr>
 <td>
-<code>trustEnforcedSecurityGroupID</code><br>
+<code>trustEnforcedSecurityGroupID</code><br/>
 <em>
 string
 </em>
@@ -2565,7 +2565,7 @@ to all ENIs in the VPC.</p>
 <tbody>
 <tr>
 <td>
-<code>state</code><br>
+<code>state</code><br/>
 <em>
 string
 </em>
@@ -2592,7 +2592,7 @@ string
 <tbody>
 <tr>
 <td>
-<code>storageClassName</code><br>
+<code>storageClassName</code><br/>
 <em>
 string
 </em>
@@ -2627,7 +2627,7 @@ This field is not used for managed clusters in a Multi-cluster management setup.
 <tbody>
 <tr>
 <td>
-<code>webApplicationFirewall</code><br>
+<code>webApplicationFirewall</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.WAFStatusType">
 WAFStatusType
@@ -2641,7 +2641,7 @@ When enabled, Services may opt-in to having ingress traffic examed by ModSecurit
 </tr>
 <tr>
 <td>
-<code>logCollection</code><br>
+<code>logCollection</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.LogCollectionSpec">
 LogCollectionSpec
@@ -2671,7 +2671,7 @@ LogCollectionSpec
 <tbody>
 <tr>
 <td>
-<code>state</code><br>
+<code>state</code><br/>
 <em>
 string
 </em>
@@ -2700,7 +2700,7 @@ string
 <tbody>
 <tr>
 <td>
-<code>type</code><br>
+<code>type</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.AuthType">
 AuthType
@@ -2714,7 +2714,7 @@ Default: Token</p>
 </tr>
 <tr>
 <td>
-<code>authority</code><br>
+<code>authority</code><br/>
 <em>
 string
 </em>
@@ -2726,7 +2726,7 @@ string
 </tr>
 <tr>
 <td>
-<code>clientID</code><br>
+<code>clientID</code><br/>
 <em>
 string
 </em>
@@ -2765,7 +2765,7 @@ options are: Token, Basic, OIDC, OAuth</p>
 <tbody>
 <tr>
 <td>
-<code>host</code><br>
+<code>host</code><br/>
 <em>
 string
 </em>
@@ -2776,7 +2776,7 @@ string
 </tr>
 <tr>
 <td>
-<code>startTLS</code><br>
+<code>startTLS</code><br/>
 <em>
 bool
 </em>
@@ -2790,7 +2790,7 @@ the ldaps:// protocol.</p>
 </tr>
 <tr>
 <td>
-<code>userSearch</code><br>
+<code>userSearch</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.UserSearch">
 UserSearch
@@ -2803,7 +2803,7 @@ UserSearch
 </tr>
 <tr>
 <td>
-<code>groupSearch</code><br>
+<code>groupSearch</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.GroupSearch">
 GroupSearch
@@ -2834,7 +2834,7 @@ GroupSearch
 <tbody>
 <tr>
 <td>
-<code>issuerURL</code><br>
+<code>issuerURL</code><br/>
 <em>
 string
 </em>
@@ -2845,7 +2845,7 @@ string
 </tr>
 <tr>
 <td>
-<code>usernameClaim</code><br>
+<code>usernameClaim</code><br/>
 <em>
 string
 </em>
@@ -2856,7 +2856,7 @@ string
 </tr>
 <tr>
 <td>
-<code>requestedScopes</code><br>
+<code>requestedScopes</code><br/>
 <em>
 []string
 </em>
@@ -2869,7 +2869,7 @@ requested: [&ldquo;openid&rdquo;, &ldquo;email&rdquo;, &ldquo;profile&rdquo;, &l
 </tr>
 <tr>
 <td>
-<code>usernamePrefix</code><br>
+<code>usernamePrefix</code><br/>
 <em>
 string
 </em>
@@ -2881,7 +2881,7 @@ string
 </tr>
 <tr>
 <td>
-<code>groupsClaim</code><br>
+<code>groupsClaim</code><br/>
 <em>
 string
 </em>
@@ -2893,7 +2893,7 @@ string
 </tr>
 <tr>
 <td>
-<code>groupsPrefix</code><br>
+<code>groupsPrefix</code><br/>
 <em>
 string
 </em>
@@ -2905,7 +2905,7 @@ string
 </tr>
 <tr>
 <td>
-<code>emailVerification</code><br>
+<code>emailVerification</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.EmailVerificationType">
 EmailVerificationType
@@ -2922,7 +2922,7 @@ Default: Verify</p>
 </tr>
 <tr>
 <td>
-<code>promptTypes</code><br>
+<code>promptTypes</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.PromptType">
 []PromptType
@@ -2939,7 +2939,7 @@ Default: &ldquo;Consent&rdquo;</p>
 </tr>
 <tr>
 <td>
-<code>type</code><br>
+<code>type</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.OIDCType">
 OIDCType
@@ -2970,7 +2970,7 @@ OIDCType
 <tbody>
 <tr>
 <td>
-<code>issuerURL</code><br>
+<code>issuerURL</code><br/>
 <em>
 string
 </em>
@@ -2998,7 +2998,7 @@ string
 <tbody>
 <tr>
 <td>
-<code>managerDomain</code><br>
+<code>managerDomain</code><br/>
 <em>
 string
 </em>
@@ -3009,7 +3009,7 @@ string
 </tr>
 <tr>
 <td>
-<code>usernamePrefix</code><br>
+<code>usernamePrefix</code><br/>
 <em>
 string
 </em>
@@ -3023,7 +3023,7 @@ ClusterRoleBindings into Elastic.</p>
 </tr>
 <tr>
 <td>
-<code>groupsPrefix</code><br>
+<code>groupsPrefix</code><br/>
 <em>
 string
 </em>
@@ -3037,7 +3037,7 @@ ClusterRoleBindings into Elastic.</p>
 </tr>
 <tr>
 <td>
-<code>oidc</code><br>
+<code>oidc</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.AuthenticationOIDC">
 AuthenticationOIDC
@@ -3051,7 +3051,7 @@ AuthenticationOIDC
 </tr>
 <tr>
 <td>
-<code>openshift</code><br>
+<code>openshift</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.AuthenticationOpenshift">
 AuthenticationOpenshift
@@ -3065,7 +3065,7 @@ AuthenticationOpenshift
 </tr>
 <tr>
 <td>
-<code>ldap</code><br>
+<code>ldap</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.AuthenticationLDAP">
 AuthenticationLDAP
@@ -3096,7 +3096,7 @@ AuthenticationLDAP
 <tbody>
 <tr>
 <td>
-<code>state</code><br>
+<code>state</code><br/>
 <em>
 string
 </em>
@@ -3148,7 +3148,7 @@ string
 <tbody>
 <tr>
 <td>
-<code>type</code><br>
+<code>type</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CNIPluginType">
 CNIPluginType
@@ -3170,7 +3170,7 @@ to be installed separately.</p>
 </tr>
 <tr>
 <td>
-<code>ipam</code><br>
+<code>ipam</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.IPAMSpec">
 IPAMSpec
@@ -3202,7 +3202,7 @@ Calico Enterprise installation.</p>
 <tbody>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Metadata">
 Metadata
@@ -3216,7 +3216,7 @@ Metadata
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CalicoKubeControllersDeploymentSpec">
 CalicoKubeControllersDeploymentSpec
@@ -3251,7 +3251,7 @@ CalicoKubeControllersDeploymentSpec
 <tbody>
 <tr>
 <td>
-<code>name</code><br>
+<code>name</code><br/>
 <em>
 string
 </em>
@@ -3262,7 +3262,7 @@ string
 </tr>
 <tr>
 <td>
-<code>resources</code><br>
+<code>resources</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#resourcerequirements-v1-core">
 Kubernetes core/v1.ResourceRequirements
@@ -3296,7 +3296,7 @@ If used in conjunction with the deprecated ComponentResources, then this value t
 <tbody>
 <tr>
 <td>
-<code>containers</code><br>
+<code>containers</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CalicoKubeControllersDeploymentContainer">
 []CalicoKubeControllersDeploymentContainer
@@ -3312,7 +3312,7 @@ If omitted, the calico-kube-controllers Deployment will use its default values f
 </tr>
 <tr>
 <td>
-<code>affinity</code><br>
+<code>affinity</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#affinity-v1-core">
 Kubernetes core/v1.Affinity
@@ -3329,7 +3329,7 @@ WARNING: Please note that this field will override the default calico-kube-contr
 </tr>
 <tr>
 <td>
-<code>nodeSelector</code><br>
+<code>nodeSelector</code><br/>
 <em>
 map[string]string
 </em>
@@ -3347,7 +3347,7 @@ WARNING: Please note that this field will modify the default calico-kube-control
 </tr>
 <tr>
 <td>
-<code>tolerations</code><br>
+<code>tolerations</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#toleration-v1-core">
 []Kubernetes core/v1.Toleration
@@ -3381,7 +3381,7 @@ WARNING: Please note that this field will override the default calico-kube-contr
 <tbody>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Metadata">
 Metadata
@@ -3396,7 +3396,7 @@ the pod&rsquo;s metadata.</p>
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CalicoKubeControllersDeploymentPodSpec">
 CalicoKubeControllersDeploymentPodSpec
@@ -3431,7 +3431,7 @@ CalicoKubeControllersDeploymentPodSpec
 <tbody>
 <tr>
 <td>
-<code>minReadySeconds</code><br>
+<code>minReadySeconds</code><br/>
 <em>
 int32
 </em>
@@ -3446,7 +3446,7 @@ If omitted, the calico-kube-controllers Deployment will use its default value fo
 </tr>
 <tr>
 <td>
-<code>template</code><br>
+<code>template</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CalicoKubeControllersDeploymentPodTemplateSpec">
 CalicoKubeControllersDeploymentPodTemplateSpec
@@ -3477,7 +3477,7 @@ CalicoKubeControllersDeploymentPodTemplateSpec
 <tbody>
 <tr>
 <td>
-<code>linuxDataplane</code><br>
+<code>linuxDataplane</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.LinuxDataplaneOption">
 LinuxDataplaneOption
@@ -3494,7 +3494,7 @@ Default: Iptables</p>
 </tr>
 <tr>
 <td>
-<code>bgp</code><br>
+<code>bgp</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.BGPOption">
 BGPOption
@@ -3508,7 +3508,7 @@ BGPOption
 </tr>
 <tr>
 <td>
-<code>ipPools</code><br>
+<code>ipPools</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.IPPool">
 []IPPool
@@ -3523,7 +3523,7 @@ address family may be specified. If omitted, a single pool will be configured if
 </tr>
 <tr>
 <td>
-<code>mtu</code><br>
+<code>mtu</code><br/>
 <em>
 int32
 </em>
@@ -3536,7 +3536,7 @@ If not specified, Calico will perform MTU auto-detection based on the cluster ne
 </tr>
 <tr>
 <td>
-<code>nodeAddressAutodetectionV4</code><br>
+<code>nodeAddressAutodetectionV4</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.NodeAddressAutodetection">
 NodeAddressAutodetection
@@ -3551,7 +3551,7 @@ will use default auto-detection settings to acquire an IPv4 address for each nod
 </tr>
 <tr>
 <td>
-<code>nodeAddressAutodetectionV6</code><br>
+<code>nodeAddressAutodetectionV6</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.NodeAddressAutodetection">
 NodeAddressAutodetection
@@ -3566,7 +3566,7 @@ IPv6 addresses will not be auto-detected.</p>
 </tr>
 <tr>
 <td>
-<code>hostPorts</code><br>
+<code>hostPorts</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.HostPortsType">
 HostPortsType
@@ -3581,7 +3581,7 @@ Default: Enabled</p>
 </tr>
 <tr>
 <td>
-<code>multiInterfaceMode</code><br>
+<code>multiInterfaceMode</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.MultiInterfaceMode">
 MultiInterfaceMode
@@ -3597,7 +3597,7 @@ Default: None</p>
 </tr>
 <tr>
 <td>
-<code>containerIPForwarding</code><br>
+<code>containerIPForwarding</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.ContainerIPForwardingType">
 ContainerIPForwardingType
@@ -3629,7 +3629,7 @@ Default: Disabled</p>
 <tbody>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Metadata">
 Metadata
@@ -3643,7 +3643,7 @@ Metadata
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CalicoNodeDaemonSetSpec">
 CalicoNodeDaemonSetSpec
@@ -3678,7 +3678,7 @@ CalicoNodeDaemonSetSpec
 <tbody>
 <tr>
 <td>
-<code>name</code><br>
+<code>name</code><br/>
 <em>
 string
 </em>
@@ -3689,7 +3689,7 @@ string
 </tr>
 <tr>
 <td>
-<code>resources</code><br>
+<code>resources</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#resourcerequirements-v1-core">
 Kubernetes core/v1.ResourceRequirements
@@ -3723,7 +3723,7 @@ If used in conjunction with the deprecated ComponentResources, then this value t
 <tbody>
 <tr>
 <td>
-<code>name</code><br>
+<code>name</code><br/>
 <em>
 string
 </em>
@@ -3734,7 +3734,7 @@ string
 </tr>
 <tr>
 <td>
-<code>resources</code><br>
+<code>resources</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#resourcerequirements-v1-core">
 Kubernetes core/v1.ResourceRequirements
@@ -3768,7 +3768,7 @@ If used in conjunction with the deprecated ComponentResources, then this value t
 <tbody>
 <tr>
 <td>
-<code>initContainers</code><br>
+<code>initContainers</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CalicoNodeDaemonSetInitContainer">
 []CalicoNodeDaemonSetInitContainer
@@ -3784,7 +3784,7 @@ If omitted, the calico-node DaemonSet will use its default values for its init c
 </tr>
 <tr>
 <td>
-<code>containers</code><br>
+<code>containers</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CalicoNodeDaemonSetContainer">
 []CalicoNodeDaemonSetContainer
@@ -3800,7 +3800,7 @@ If omitted, the calico-node DaemonSet will use its default values for its contai
 </tr>
 <tr>
 <td>
-<code>affinity</code><br>
+<code>affinity</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#affinity-v1-core">
 Kubernetes core/v1.Affinity
@@ -3817,7 +3817,7 @@ WARNING: Please note that this field will override the default calico-node Daemo
 </tr>
 <tr>
 <td>
-<code>nodeSelector</code><br>
+<code>nodeSelector</code><br/>
 <em>
 map[string]string
 </em>
@@ -3833,7 +3833,7 @@ WARNING: Please note that this field will modify the default calico-node DaemonS
 </tr>
 <tr>
 <td>
-<code>tolerations</code><br>
+<code>tolerations</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#toleration-v1-core">
 []Kubernetes core/v1.Toleration
@@ -3867,7 +3867,7 @@ WARNING: Please note that this field will override the default calico-node Daemo
 <tbody>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Metadata">
 Metadata
@@ -3882,7 +3882,7 @@ the pod&rsquo;s metadata.</p>
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CalicoNodeDaemonSetPodSpec">
 CalicoNodeDaemonSetPodSpec
@@ -3917,7 +3917,7 @@ CalicoNodeDaemonSetPodSpec
 <tbody>
 <tr>
 <td>
-<code>minReadySeconds</code><br>
+<code>minReadySeconds</code><br/>
 <em>
 int32
 </em>
@@ -3932,7 +3932,7 @@ If omitted, the calico-node DaemonSet will use its default value for minReadySec
 </tr>
 <tr>
 <td>
-<code>template</code><br>
+<code>template</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CalicoNodeDaemonSetPodTemplateSpec">
 CalicoNodeDaemonSetPodTemplateSpec
@@ -3963,7 +3963,7 @@ CalicoNodeDaemonSetPodTemplateSpec
 <tbody>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Metadata">
 Metadata
@@ -3977,7 +3977,7 @@ Metadata
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CalicoWindowsUpgradeDaemonSetSpec">
 CalicoWindowsUpgradeDaemonSetSpec
@@ -4012,7 +4012,7 @@ CalicoWindowsUpgradeDaemonSetSpec
 <tbody>
 <tr>
 <td>
-<code>name</code><br>
+<code>name</code><br/>
 <em>
 string
 </em>
@@ -4023,7 +4023,7 @@ string
 </tr>
 <tr>
 <td>
-<code>resources</code><br>
+<code>resources</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#resourcerequirements-v1-core">
 Kubernetes core/v1.ResourceRequirements
@@ -4056,7 +4056,7 @@ If omitted, the calico-windows-upgrade DaemonSet will use its default value for 
 <tbody>
 <tr>
 <td>
-<code>containers</code><br>
+<code>containers</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CalicoWindowsUpgradeDaemonSetContainer">
 []CalicoWindowsUpgradeDaemonSetContainer
@@ -4072,7 +4072,7 @@ If omitted, the calico-windows-upgrade DaemonSet will use its default values for
 </tr>
 <tr>
 <td>
-<code>affinity</code><br>
+<code>affinity</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#affinity-v1-core">
 Kubernetes core/v1.Affinity
@@ -4089,7 +4089,7 @@ WARNING: Please note that this field will override the default calico-windows-up
 </tr>
 <tr>
 <td>
-<code>nodeSelector</code><br>
+<code>nodeSelector</code><br/>
 <em>
 map[string]string
 </em>
@@ -4105,7 +4105,7 @@ WARNING: Please note that this field will modify the default calico-windows-upgr
 </tr>
 <tr>
 <td>
-<code>tolerations</code><br>
+<code>tolerations</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#toleration-v1-core">
 []Kubernetes core/v1.Toleration
@@ -4139,7 +4139,7 @@ WARNING: Please note that this field will override the default calico-windows-up
 <tbody>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Metadata">
 Metadata
@@ -4154,7 +4154,7 @@ the pod&rsquo;s metadata.</p>
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CalicoWindowsUpgradeDaemonSetPodSpec">
 CalicoWindowsUpgradeDaemonSetPodSpec
@@ -4189,7 +4189,7 @@ CalicoWindowsUpgradeDaemonSetPodSpec
 <tbody>
 <tr>
 <td>
-<code>minReadySeconds</code><br>
+<code>minReadySeconds</code><br/>
 <em>
 int32
 </em>
@@ -4204,7 +4204,7 @@ If omitted, the calico-windows-upgrade DaemonSet will use its default value for 
 </tr>
 <tr>
 <td>
-<code>template</code><br>
+<code>template</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CalicoWindowsUpgradeDaemonSetPodTemplateSpec">
 CalicoWindowsUpgradeDaemonSetPodTemplateSpec
@@ -4237,7 +4237,7 @@ pods will be stuck during initialization.</p>
 <tbody>
 <tr>
 <td>
-<code>caCert</code><br>
+<code>caCert</code><br/>
 <em>
 []byte
 </em>
@@ -4248,7 +4248,7 @@ pods will be stuck during initialization.</p>
 </tr>
 <tr>
 <td>
-<code>signerName</code><br>
+<code>signerName</code><br/>
 <em>
 string
 </em>
@@ -4261,7 +4261,7 @@ Must be formatted as: <code>&lt;my-domain&gt;/&lt;my-signername&gt;</code>.</p>
 </tr>
 <tr>
 <td>
-<code>keyAlgorithm</code><br>
+<code>keyAlgorithm</code><br/>
 <em>
 string
 </em>
@@ -4274,7 +4274,7 @@ Default: RSAWithSize2048</p>
 </tr>
 <tr>
 <td>
-<code>signatureAlgorithm</code><br>
+<code>signatureAlgorithm</code><br/>
 <em>
 string
 </em>
@@ -4317,7 +4317,7 @@ Default: SHA256WithRSA</p>
 <tbody>
 <tr>
 <td>
-<code>state</code><br>
+<code>state</code><br/>
 <em>
 string
 </em>
@@ -4354,7 +4354,7 @@ The ComponentResource struct associates a ResourceRequirements with a component 
 <tbody>
 <tr>
 <td>
-<code>componentName</code><br>
+<code>componentName</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.ComponentName">
 ComponentName
@@ -4367,7 +4367,7 @@ ComponentName
 </tr>
 <tr>
 <td>
-<code>resourceRequirements</code><br>
+<code>resourceRequirements</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#resourcerequirements-v1-core">
 Kubernetes core/v1.ResourceRequirements
@@ -4411,7 +4411,7 @@ Kubernetes core/v1.ResourceRequirements
 <tbody>
 <tr>
 <td>
-<code>region</code><br>
+<code>region</code><br/>
 <em>
 string
 </em>
@@ -4422,7 +4422,7 @@ string
 </tr>
 <tr>
 <td>
-<code>groupName</code><br>
+<code>groupName</code><br/>
 <em>
 string
 </em>
@@ -4433,7 +4433,7 @@ string
 </tr>
 <tr>
 <td>
-<code>streamPrefix</code><br>
+<code>streamPrefix</code><br/>
 <em>
 string
 </em>
@@ -4446,7 +4446,7 @@ Default: kube-apiserver-audit-</p>
 </tr>
 <tr>
 <td>
-<code>fetchInterval</code><br>
+<code>fetchInterval</code><br/>
 <em>
 int32
 </em>
@@ -4496,7 +4496,7 @@ Default: 60</p>
 <tbody>
 <tr>
 <td>
-<code>baseDN</code><br>
+<code>baseDN</code><br/>
 <em>
 string
 </em>
@@ -4507,7 +4507,7 @@ string
 </tr>
 <tr>
 <td>
-<code>filter</code><br>
+<code>filter</code><br/>
 <em>
 string
 </em>
@@ -4520,7 +4520,7 @@ For example &ldquo;(objectClass=posixGroup)&rdquo;</p>
 </tr>
 <tr>
 <td>
-<code>nameAttribute</code><br>
+<code>nameAttribute</code><br/>
 <em>
 string
 </em>
@@ -4531,7 +4531,7 @@ string
 </tr>
 <tr>
 <td>
-<code>userMatchers</code><br>
+<code>userMatchers</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.UserMatch">
 []UserMatch
@@ -4577,7 +4577,7 @@ attribute value.</p>
 <tbody>
 <tr>
 <td>
-<code>type</code><br>
+<code>type</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.IPAMPluginType">
 IPAMPluginType
@@ -4614,7 +4614,7 @@ that is expected to be installed separately.</p>
 <tbody>
 <tr>
 <td>
-<code>cidr</code><br>
+<code>cidr</code><br/>
 <em>
 string
 </em>
@@ -4625,7 +4625,7 @@ string
 </tr>
 <tr>
 <td>
-<code>encapsulation</code><br>
+<code>encapsulation</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.EncapsulationType">
 EncapsulationType
@@ -4641,7 +4641,7 @@ Default: IPIP</p>
 </tr>
 <tr>
 <td>
-<code>natOutgoing</code><br>
+<code>natOutgoing</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.NATOutgoingType">
 NATOutgoingType
@@ -4656,7 +4656,7 @@ Default: Enabled</p>
 </tr>
 <tr>
 <td>
-<code>nodeSelector</code><br>
+<code>nodeSelector</code><br/>
 <em>
 string
 </em>
@@ -4669,7 +4669,7 @@ Default: &lsquo;all()&rsquo;</p>
 </tr>
 <tr>
 <td>
-<code>blockSize</code><br>
+<code>blockSize</code><br/>
 <em>
 int32
 </em>
@@ -4683,7 +4683,7 @@ Default: 26 (IPv4), 122 (IPv6)</p>
 </tr>
 <tr>
 <td>
-<code>disableBGPExport</code><br>
+<code>disableBGPExport</code><br/>
 <em>
 bool
 </em>
@@ -4712,7 +4712,7 @@ Default: false</p>
 <tbody>
 <tr>
 <td>
-<code>image</code><br>
+<code>image</code><br/>
 <em>
 string
 </em>
@@ -4726,7 +4726,7 @@ For the image <code>docker.io/calico/node:v3.17.1</code> it should be represente
 </tr>
 <tr>
 <td>
-<code>digest</code><br>
+<code>digest</code><br/>
 <em>
 string
 </em>
@@ -4755,7 +4755,7 @@ The field should not include a leading <code>@</code> and must be prefixed with 
 <tbody>
 <tr>
 <td>
-<code>images</code><br>
+<code>images</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Image">
 []Image
@@ -4786,7 +4786,7 @@ must be specified.</p>
 <tbody>
 <tr>
 <td>
-<code>replicas</code><br>
+<code>replicas</code><br/>
 <em>
 int32
 </em>
@@ -4816,7 +4816,7 @@ int32
 <tbody>
 <tr>
 <td>
-<code>variant</code><br>
+<code>variant</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.ProductVariant">
 ProductVariant
@@ -4831,7 +4831,7 @@ Default: Calico</p>
 </tr>
 <tr>
 <td>
-<code>registry</code><br>
+<code>registry</code><br/>
 <em>
 string
 </em>
@@ -4849,7 +4849,7 @@ supported to explicitly specify the default registries will be used.</p>
 </tr>
 <tr>
 <td>
-<code>imagePath</code><br>
+<code>imagePath</code><br/>
 <em>
 string
 </em>
@@ -4868,7 +4868,7 @@ image path will be used for each image.</p>
 </tr>
 <tr>
 <td>
-<code>imagePrefix</code><br>
+<code>imagePrefix</code><br/>
 <em>
 string
 </em>
@@ -4887,7 +4887,7 @@ image prefix will be used for each image.</p>
 </tr>
 <tr>
 <td>
-<code>imagePullSecrets</code><br>
+<code>imagePullSecrets</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#localobjectreference-v1-core">
 []Kubernetes core/v1.LocalObjectReference
@@ -4902,7 +4902,7 @@ applied to all images to be pulled.</p>
 </tr>
 <tr>
 <td>
-<code>kubernetesProvider</code><br>
+<code>kubernetesProvider</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Provider">
 Provider
@@ -4919,7 +4919,7 @@ will additionally compare the auto-detected value to the specified value to conf
 </tr>
 <tr>
 <td>
-<code>cni</code><br>
+<code>cni</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CNISpec">
 CNISpec
@@ -4933,7 +4933,7 @@ CNISpec
 </tr>
 <tr>
 <td>
-<code>calicoNetwork</code><br>
+<code>calicoNetwork</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CalicoNetworkSpec">
 CalicoNetworkSpec
@@ -4947,7 +4947,7 @@ CalicoNetworkSpec
 </tr>
 <tr>
 <td>
-<code>typhaAffinity</code><br>
+<code>typhaAffinity</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.TyphaAffinity">
 TyphaAffinity
@@ -4962,7 +4962,7 @@ TyphaAffinity allows configuration of node affinity characteristics for Typha po
 </tr>
 <tr>
 <td>
-<code>controlPlaneNodeSelector</code><br>
+<code>controlPlaneNodeSelector</code><br/>
 <em>
 map[string]string
 </em>
@@ -4975,7 +4975,7 @@ components. This is globally applied to all resources created by the operator ex
 </tr>
 <tr>
 <td>
-<code>controlPlaneTolerations</code><br>
+<code>controlPlaneTolerations</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#toleration-v1-core">
 []Kubernetes core/v1.Toleration
@@ -4990,7 +4990,7 @@ created by the operator.</p>
 </tr>
 <tr>
 <td>
-<code>controlPlaneReplicas</code><br>
+<code>controlPlaneReplicas</code><br/>
 <em>
 int32
 </em>
@@ -5003,7 +5003,7 @@ This field applies to all control plane components that support High Availabilit
 </tr>
 <tr>
 <td>
-<code>nodeMetricsPort</code><br>
+<code>nodeMetricsPort</code><br/>
 <em>
 int32
 </em>
@@ -5017,7 +5017,7 @@ prometheus metrics may still be configured through FelixConfiguration.</p>
 </tr>
 <tr>
 <td>
-<code>typhaMetricsPort</code><br>
+<code>typhaMetricsPort</code><br/>
 <em>
 int32
 </em>
@@ -5029,7 +5029,7 @@ int32
 </tr>
 <tr>
 <td>
-<code>flexVolumePath</code><br>
+<code>flexVolumePath</code><br/>
 <em>
 string
 </em>
@@ -5043,7 +5043,7 @@ kubernetesProvider.</p>
 </tr>
 <tr>
 <td>
-<code>kubeletVolumePluginPath</code><br>
+<code>kubeletVolumePluginPath</code><br/>
 <em>
 string
 </em>
@@ -5057,7 +5057,7 @@ Default: /var/lib/kubelet</p>
 </tr>
 <tr>
 <td>
-<code>nodeUpdateStrategy</code><br>
+<code>nodeUpdateStrategy</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#daemonsetupdatestrategy-v1-apps">
 Kubernetes apps/v1.DaemonSetUpdateStrategy
@@ -5072,7 +5072,7 @@ field.</p>
 </tr>
 <tr>
 <td>
-<code>componentResources</code><br>
+<code>componentResources</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.ComponentResource">
 []ComponentResource
@@ -5088,7 +5088,7 @@ Node, Typha, and KubeControllers are supported for installations.</p>
 </tr>
 <tr>
 <td>
-<code>certificateManagement</code><br>
+<code>certificateManagement</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CertificateManagement">
 CertificateManagement
@@ -5104,7 +5104,7 @@ pods will be stuck during initialization.</p>
 </tr>
 <tr>
 <td>
-<code>nonPrivileged</code><br>
+<code>nonPrivileged</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.NonPrivilegedType">
 NonPrivilegedType
@@ -5118,7 +5118,7 @@ NonPrivilegedType
 </tr>
 <tr>
 <td>
-<code>calicoNodeDaemonSet</code><br>
+<code>calicoNodeDaemonSet</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CalicoNodeDaemonSet">
 CalicoNodeDaemonSet
@@ -5132,7 +5132,7 @@ conjunction with the deprecated ComponentResources, then these overrides take pr
 </tr>
 <tr>
 <td>
-<code>calicoKubeControllersDeployment</code><br>
+<code>calicoKubeControllersDeployment</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CalicoKubeControllersDeployment">
 CalicoKubeControllersDeployment
@@ -5146,7 +5146,7 @@ conjunction with the deprecated ComponentResources, then these overrides take pr
 </tr>
 <tr>
 <td>
-<code>typhaDeployment</code><br>
+<code>typhaDeployment</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.TyphaDeployment">
 TyphaDeployment
@@ -5160,7 +5160,7 @@ ComponentResources or TyphaAffinity, then these overrides take precedence.</p>
 </tr>
 <tr>
 <td>
-<code>calicoWindowsUpgradeDaemonSet</code><br>
+<code>calicoWindowsUpgradeDaemonSet</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CalicoWindowsUpgradeDaemonSet">
 CalicoWindowsUpgradeDaemonSet
@@ -5173,7 +5173,7 @@ CalicoWindowsUpgradeDaemonSet
 </tr>
 <tr>
 <td>
-<code>fipsMode</code><br>
+<code>fipsMode</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.FIPSMode">
 FIPSMode
@@ -5205,7 +5205,7 @@ Default: Disabled</p>
 <tbody>
 <tr>
 <td>
-<code>variant</code><br>
+<code>variant</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.ProductVariant">
 ProductVariant
@@ -5218,7 +5218,7 @@ ProductVariant
 </tr>
 <tr>
 <td>
-<code>mtu</code><br>
+<code>mtu</code><br/>
 <em>
 int32
 </em>
@@ -5230,7 +5230,7 @@ configured value, or based on Calico&rsquo;s native auto-detetion.</p>
 </tr>
 <tr>
 <td>
-<code>imageSet</code><br>
+<code>imageSet</code><br/>
 <em>
 string
 </em>
@@ -5243,7 +5243,7 @@ that is being used. If an ImageSet is not being used then this will not be set.<
 </tr>
 <tr>
 <td>
-<code>computed</code><br>
+<code>computed</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.InstallationSpec">
 InstallationSpec
@@ -5257,7 +5257,7 @@ InstallationSpec
 </tr>
 <tr>
 <td>
-<code>conditions</code><br>
+<code>conditions</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#condition-v1-meta">
 []Kubernetes meta/v1.Condition
@@ -5295,7 +5295,7 @@ Ready, Progressing, Degraded or other customer types.</p>
 <tbody>
 <tr>
 <td>
-<code>componentName</code><br>
+<code>componentName</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.IntrusionDetectionComponentName">
 IntrusionDetectionComponentName
@@ -5308,7 +5308,7 @@ IntrusionDetectionComponentName
 </tr>
 <tr>
 <td>
-<code>resourceRequirements</code><br>
+<code>resourceRequirements</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#resourcerequirements-v1-core">
 Kubernetes core/v1.ResourceRequirements
@@ -5338,7 +5338,7 @@ Kubernetes core/v1.ResourceRequirements
 <tbody>
 <tr>
 <td>
-<code>componentResources</code><br>
+<code>componentResources</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.IntrusionDetectionComponentResource">
 []IntrusionDetectionComponentResource
@@ -5353,7 +5353,7 @@ Only DeepPacketInspection is supported for this spec.</p>
 </tr>
 <tr>
 <td>
-<code>anomalyDetection</code><br>
+<code>anomalyDetection</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.AnomalyDetectionSpec">
 AnomalyDetectionSpec
@@ -5386,7 +5386,7 @@ management clusters.</p>
 <tbody>
 <tr>
 <td>
-<code>state</code><br>
+<code>state</code><br/>
 <em>
 string
 </em>
@@ -5429,7 +5429,7 @@ string
 <tbody>
 <tr>
 <td>
-<code>collectLogs</code><br>
+<code>collectLogs</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.LogCollectionStatusType">
 LogCollectionStatusType
@@ -5444,7 +5444,7 @@ Allowed values are Enabled or Disabled.</p>
 </tr>
 <tr>
 <td>
-<code>logIntervalSeconds</code><br>
+<code>logIntervalSeconds</code><br/>
 <em>
 int64
 </em>
@@ -5457,7 +5457,7 @@ Default: 5 sec</p>
 </tr>
 <tr>
 <td>
-<code>logRequestsPerInterval</code><br>
+<code>logRequestsPerInterval</code><br/>
 <em>
 int64
 </em>
@@ -5495,7 +5495,7 @@ Default: -1</p>
 <tbody>
 <tr>
 <td>
-<code>additionalStores</code><br>
+<code>additionalStores</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.AdditionalLogStoreSpec">
 AdditionalLogStoreSpec
@@ -5509,7 +5509,7 @@ AdditionalLogStoreSpec
 </tr>
 <tr>
 <td>
-<code>additionalSources</code><br>
+<code>additionalSources</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.AdditionalLogSourceSpec">
 AdditionalLogSourceSpec
@@ -5523,7 +5523,7 @@ AdditionalLogSourceSpec
 </tr>
 <tr>
 <td>
-<code>collectProcessPath</code><br>
+<code>collectProcessPath</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CollectProcessPathOption">
 CollectProcessPathOption
@@ -5556,7 +5556,7 @@ Default: Enabled</p>
 <tbody>
 <tr>
 <td>
-<code>state</code><br>
+<code>state</code><br/>
 <em>
 string
 </em>
@@ -5591,7 +5591,7 @@ string
 <tbody>
 <tr>
 <td>
-<code>componentName</code><br>
+<code>componentName</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.LogStorageComponentName">
 LogStorageComponentName
@@ -5604,7 +5604,7 @@ LogStorageComponentName
 </tr>
 <tr>
 <td>
-<code>resourceRequirements</code><br>
+<code>resourceRequirements</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#resourcerequirements-v1-core">
 Kubernetes core/v1.ResourceRequirements
@@ -5634,7 +5634,7 @@ Kubernetes core/v1.ResourceRequirements
 <tbody>
 <tr>
 <td>
-<code>nodes</code><br>
+<code>nodes</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Nodes">
 Nodes
@@ -5647,7 +5647,7 @@ Nodes
 </tr>
 <tr>
 <td>
-<code>indices</code><br>
+<code>indices</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Indices">
 Indices
@@ -5661,7 +5661,7 @@ Indices
 </tr>
 <tr>
 <td>
-<code>retention</code><br>
+<code>retention</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Retention">
 Retention
@@ -5675,7 +5675,7 @@ Retention
 </tr>
 <tr>
 <td>
-<code>storageClassName</code><br>
+<code>storageClassName</code><br/>
 <em>
 string
 </em>
@@ -5691,7 +5691,7 @@ Default: tigera-elasticsearch</p>
 </tr>
 <tr>
 <td>
-<code>dataNodeSelector</code><br>
+<code>dataNodeSelector</code><br/>
 <em>
 map[string]string
 </em>
@@ -5705,7 +5705,7 @@ each of the indicated key-value pairs as labels as well as access to the specifi
 </tr>
 <tr>
 <td>
-<code>componentResources</code><br>
+<code>componentResources</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.LogStorageComponentResource">
 []LogStorageComponentResource
@@ -5737,7 +5737,7 @@ Only ECKOperator is supported for this spec.</p>
 <tbody>
 <tr>
 <td>
-<code>state</code><br>
+<code>state</code><br/>
 <em>
 string
 </em>
@@ -5748,7 +5748,7 @@ string
 </tr>
 <tr>
 <td>
-<code>elasticsearchHash</code><br>
+<code>elasticsearchHash</code><br/>
 <em>
 string
 </em>
@@ -5760,7 +5760,7 @@ is an opaque string which can be monitored for changes to perform actions when E
 </tr>
 <tr>
 <td>
-<code>kibanaHash</code><br>
+<code>kibanaHash</code><br/>
 <em>
 string
 </em>
@@ -5789,7 +5789,7 @@ is an opaque string which can be monitored for changes to perform actions when K
 <tbody>
 <tr>
 <td>
-<code>managementClusterAddr</code><br>
+<code>managementClusterAddr</code><br/>
 <em>
 string
 </em>
@@ -5802,7 +5802,7 @@ should be able to access this address. This field is used by managed clusters on
 </tr>
 <tr>
 <td>
-<code>tls</code><br>
+<code>tls</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.ManagementClusterTLS">
 ManagementClusterTLS
@@ -5833,7 +5833,7 @@ ManagementClusterTLS
 <tbody>
 <tr>
 <td>
-<code>address</code><br>
+<code>address</code><br/>
 <em>
 string
 </em>
@@ -5847,7 +5847,7 @@ Valid examples are: &ldquo;0.0.0.0:31000&rdquo;, &ldquo;example.com:32000&rdquo;
 </tr>
 <tr>
 <td>
-<code>tls</code><br>
+<code>tls</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.TLS">
 TLS
@@ -5877,7 +5877,7 @@ TLS
 <tbody>
 <tr>
 <td>
-<code>ca</code><br>
+<code>ca</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.CAType">
 CAType
@@ -5911,7 +5911,7 @@ and will expect the cert to have a Common Name (CN) of &lsquo;voltron&rsquo;.</p
 <tbody>
 <tr>
 <td>
-<code>auth</code><br>
+<code>auth</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Auth">
 Auth
@@ -5942,7 +5942,7 @@ Auth
 <tbody>
 <tr>
 <td>
-<code>auth</code><br>
+<code>auth</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Auth">
 Auth
@@ -5956,7 +5956,7 @@ Auth
 </tr>
 <tr>
 <td>
-<code>state</code><br>
+<code>state</code><br/>
 <em>
 string
 </em>
@@ -5993,7 +5993,7 @@ string
 <tbody>
 <tr>
 <td>
-<code>labels</code><br>
+<code>labels</code><br/>
 <em>
 map[string]string
 </em>
@@ -6007,7 +6007,7 @@ object&rsquo;s labels provided the key does not already exist in the object&rsqu
 </tr>
 <tr>
 <td>
-<code>annotations</code><br>
+<code>annotations</code><br/>
 <em>
 map[string]string
 </em>
@@ -6052,7 +6052,7 @@ already exist in the object&rsquo;s annotations.</p>
 <tbody>
 <tr>
 <td>
-<code>state</code><br>
+<code>state</code><br/>
 <em>
 string
 </em>
@@ -6098,7 +6098,7 @@ must be specified directly on the Node resource.</p>
 <tbody>
 <tr>
 <td>
-<code>firstFound</code><br>
+<code>firstFound</code><br/>
 <em>
 bool
 </em>
@@ -6111,7 +6111,7 @@ filtering based on well-known interface names.</p>
 </tr>
 <tr>
 <td>
-<code>kubernetes</code><br>
+<code>kubernetes</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.KubernetesAutodetectionMethod">
 KubernetesAutodetectionMethod
@@ -6125,7 +6125,7 @@ KubernetesAutodetectionMethod
 </tr>
 <tr>
 <td>
-<code>interface</code><br>
+<code>interface</code><br/>
 <em>
 string
 </em>
@@ -6137,7 +6137,7 @@ string
 </tr>
 <tr>
 <td>
-<code>skipInterface</code><br>
+<code>skipInterface</code><br/>
 <em>
 string
 </em>
@@ -6150,7 +6150,7 @@ the given regex.</p>
 </tr>
 <tr>
 <td>
-<code>canReach</code><br>
+<code>canReach</code><br/>
 <em>
 string
 </em>
@@ -6163,7 +6163,7 @@ specified IP or domain.</p>
 </tr>
 <tr>
 <td>
-<code>cidrs</code><br>
+<code>cidrs</code><br/>
 <em>
 []string
 </em>
@@ -6192,7 +6192,7 @@ one of the provided CIDRs.</p>
 <tbody>
 <tr>
 <td>
-<code>preferredDuringSchedulingIgnoredDuringExecution</code><br>
+<code>preferredDuringSchedulingIgnoredDuringExecution</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#preferredschedulingterm-v1-core">
 []Kubernetes core/v1.PreferredSchedulingTerm
@@ -6208,7 +6208,7 @@ a node that violates one or more of the expressions.</p>
 </tr>
 <tr>
 <td>
-<code>requiredDuringSchedulingIgnoredDuringExecution</code><br>
+<code>requiredDuringSchedulingIgnoredDuringExecution</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#nodeselector-v1-core">
 Kubernetes core/v1.NodeSelector
@@ -6250,7 +6250,7 @@ may or may not try to eventually evict the pod from its node.</p>
 <tbody>
 <tr>
 <td>
-<code>selectionAttributes</code><br>
+<code>selectionAttributes</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.NodeSetSelectionAttribute">
 []NodeSetSelectionAttribute
@@ -6284,7 +6284,7 @@ to define Node Affinity for the Pods created for the Elasticsearch nodes.</p>
 <tbody>
 <tr>
 <td>
-<code>name</code><br>
+<code>name</code><br/>
 <em>
 string
 </em>
@@ -6294,7 +6294,7 @@ string
 </tr>
 <tr>
 <td>
-<code>nodeLabel</code><br>
+<code>nodeLabel</code><br/>
 <em>
 string
 </em>
@@ -6304,7 +6304,7 @@ string
 </tr>
 <tr>
 <td>
-<code>value</code><br>
+<code>value</code><br/>
 <em>
 string
 </em>
@@ -6331,7 +6331,7 @@ string
 <tbody>
 <tr>
 <td>
-<code>count</code><br>
+<code>count</code><br/>
 <em>
 int64
 </em>
@@ -6342,7 +6342,7 @@ int64
 </tr>
 <tr>
 <td>
-<code>nodeSets</code><br>
+<code>nodeSets</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.NodeSet">
 []NodeSet
@@ -6356,7 +6356,7 @@ int64
 </tr>
 <tr>
 <td>
-<code>resourceRequirements</code><br>
+<code>resourceRequirements</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#resourcerequirements-v1-core">
 Kubernetes core/v1.ResourceRequirements
@@ -6430,7 +6430,7 @@ are: EKS, GKE, AKS, RKE2, OpenShift, DockerEnterprise.</p>
 <tbody>
 <tr>
 <td>
-<code>flows</code><br>
+<code>flows</code><br/>
 <em>
 int32
 </em>
@@ -6444,7 +6444,7 @@ Default: 8</p>
 </tr>
 <tr>
 <td>
-<code>auditReports</code><br>
+<code>auditReports</code><br/>
 <em>
 int32
 </em>
@@ -6458,7 +6458,7 @@ Default: 91</p>
 </tr>
 <tr>
 <td>
-<code>snapshots</code><br>
+<code>snapshots</code><br/>
 <em>
 int32
 </em>
@@ -6475,7 +6475,7 @@ Default: 91</p>
 </tr>
 <tr>
 <td>
-<code>complianceReports</code><br>
+<code>complianceReports</code><br/>
 <em>
 int32
 </em>
@@ -6492,7 +6492,7 @@ Default: 91</p>
 </tr>
 <tr>
 <td>
-<code>dnsLogs</code><br>
+<code>dnsLogs</code><br/>
 <em>
 int32
 </em>
@@ -6506,7 +6506,7 @@ Default: 8</p>
 </tr>
 <tr>
 <td>
-<code>bgpLogs</code><br>
+<code>bgpLogs</code><br/>
 <em>
 int32
 </em>
@@ -6537,7 +6537,7 @@ Default: 8</p>
 <tbody>
 <tr>
 <td>
-<code>region</code><br>
+<code>region</code><br/>
 <em>
 string
 </em>
@@ -6548,7 +6548,7 @@ string
 </tr>
 <tr>
 <td>
-<code>bucketName</code><br>
+<code>bucketName</code><br/>
 <em>
 string
 </em>
@@ -6559,7 +6559,7 @@ string
 </tr>
 <tr>
 <td>
-<code>bucketPath</code><br>
+<code>bucketPath</code><br/>
 <em>
 string
 </em>
@@ -6587,7 +6587,7 @@ string
 <tbody>
 <tr>
 <td>
-<code>endpoint</code><br>
+<code>endpoint</code><br/>
 <em>
 string
 </em>
@@ -6634,7 +6634,7 @@ Allowable values are Audit, DNS, Flows and IDSEvents.
 <tbody>
 <tr>
 <td>
-<code>endpoint</code><br>
+<code>endpoint</code><br/>
 <em>
 string
 </em>
@@ -6645,7 +6645,7 @@ string
 </tr>
 <tr>
 <td>
-<code>packetSize</code><br>
+<code>packetSize</code><br/>
 <em>
 int32
 </em>
@@ -6659,7 +6659,7 @@ Default: 1024</p>
 </tr>
 <tr>
 <td>
-<code>logTypes</code><br>
+<code>logTypes</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.SyslogLogType">
 []SyslogLogType
@@ -6689,7 +6689,7 @@ omitted, it will be set to include all possible values.</p>
 <tbody>
 <tr>
 <td>
-<code>secretName</code><br>
+<code>secretName</code><br/>
 <em>
 string
 </em>
@@ -6727,7 +6727,7 @@ To reconnect existing managed clusters, change the tls.ca of the  managed cluste
 <tbody>
 <tr>
 <td>
-<code>type</code><br>
+<code>type</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.StatusConditionType">
 StatusConditionType
@@ -6740,7 +6740,7 @@ StatusConditionType
 </tr>
 <tr>
 <td>
-<code>status</code><br>
+<code>status</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.ConditionStatus">
 ConditionStatus
@@ -6753,7 +6753,7 @@ ConditionStatus
 </tr>
 <tr>
 <td>
-<code>lastTransitionTime</code><br>
+<code>lastTransitionTime</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#time-v1-meta">
 Kubernetes meta/v1.Time
@@ -6766,7 +6766,7 @@ Kubernetes meta/v1.Time
 </tr>
 <tr>
 <td>
-<code>reason</code><br>
+<code>reason</code><br/>
 <em>
 string
 </em>
@@ -6777,7 +6777,7 @@ string
 </tr>
 <tr>
 <td>
-<code>message</code><br>
+<code>message</code><br/>
 <em>
 string
 </em>
@@ -6788,7 +6788,7 @@ string
 </tr>
 <tr>
 <td>
-<code>observedGeneration</code><br>
+<code>observedGeneration</code><br/>
 <em>
 int64
 </em>
@@ -6829,7 +6829,7 @@ with respect to the current state of the instance.</p>
 <tbody>
 <tr>
 <td>
-<code>conditions</code><br>
+<code>conditions</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.TigeraStatusCondition">
 []TigeraStatusCondition
@@ -6861,7 +6861,7 @@ TyphaAffinity allows configuration of node affinity characteristics for Typha po
 <tbody>
 <tr>
 <td>
-<code>nodeAffinity</code><br>
+<code>nodeAffinity</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.NodeAffinity">
 NodeAffinity
@@ -6892,7 +6892,7 @@ NodeAffinity
 <tbody>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Metadata">
 Metadata
@@ -6906,7 +6906,7 @@ Metadata
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.TyphaDeploymentSpec">
 TyphaDeploymentSpec
@@ -6941,7 +6941,7 @@ TyphaDeploymentSpec
 <tbody>
 <tr>
 <td>
-<code>name</code><br>
+<code>name</code><br/>
 <em>
 string
 </em>
@@ -6952,7 +6952,7 @@ string
 </tr>
 <tr>
 <td>
-<code>resources</code><br>
+<code>resources</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#resourcerequirements-v1-core">
 Kubernetes core/v1.ResourceRequirements
@@ -6986,7 +6986,7 @@ If used in conjunction with the deprecated ComponentResources, then this value t
 <tbody>
 <tr>
 <td>
-<code>name</code><br>
+<code>name</code><br/>
 <em>
 string
 </em>
@@ -6997,7 +6997,7 @@ string
 </tr>
 <tr>
 <td>
-<code>resources</code><br>
+<code>resources</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#resourcerequirements-v1-core">
 Kubernetes core/v1.ResourceRequirements
@@ -7031,7 +7031,7 @@ If used in conjunction with the deprecated ComponentResources, then this value t
 <tbody>
 <tr>
 <td>
-<code>initContainers</code><br>
+<code>initContainers</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.TyphaDeploymentInitContainer">
 []TyphaDeploymentInitContainer
@@ -7047,7 +7047,7 @@ If omitted, the typha Deployment will use its default values for its init contai
 </tr>
 <tr>
 <td>
-<code>containers</code><br>
+<code>containers</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.TyphaDeploymentContainer">
 []TyphaDeploymentContainer
@@ -7063,7 +7063,7 @@ If omitted, the typha Deployment will use its default values for its containers.
 </tr>
 <tr>
 <td>
-<code>affinity</code><br>
+<code>affinity</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#affinity-v1-core">
 Kubernetes core/v1.Affinity
@@ -7081,7 +7081,7 @@ WARNING: Please note that this field will override the default calico-typha Depl
 </tr>
 <tr>
 <td>
-<code>nodeSelector</code><br>
+<code>nodeSelector</code><br/>
 <em>
 map[string]string
 </em>
@@ -7096,7 +7096,7 @@ WARNING: Please note that this field will modify the default calico-typha Deploy
 </tr>
 <tr>
 <td>
-<code>tolerations</code><br>
+<code>tolerations</code><br/>
 <em>
 <a href="https://v1-21.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#toleration-v1-core">
 []Kubernetes core/v1.Toleration
@@ -7130,7 +7130,7 @@ WARNING: Please note that this field will override the default calico-typha Depl
 <tbody>
 <tr>
 <td>
-<code>metadata</code><br>
+<code>metadata</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.Metadata">
 Metadata
@@ -7145,7 +7145,7 @@ the pod&rsquo;s metadata.</p>
 </tr>
 <tr>
 <td>
-<code>spec</code><br>
+<code>spec</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.TyphaDeploymentPodSpec">
 TyphaDeploymentPodSpec
@@ -7180,7 +7180,7 @@ TyphaDeploymentPodSpec
 <tbody>
 <tr>
 <td>
-<code>minReadySeconds</code><br>
+<code>minReadySeconds</code><br/>
 <em>
 int32
 </em>
@@ -7195,7 +7195,7 @@ If omitted, the typha Deployment will use its default value for minReadySeconds.
 </tr>
 <tr>
 <td>
-<code>template</code><br>
+<code>template</code><br/>
 <em>
 <a href="#operator.tigera.io/v1.TyphaDeploymentPodTemplateSpec">
 TyphaDeploymentPodTemplateSpec
@@ -7226,7 +7226,7 @@ TyphaDeploymentPodTemplateSpec
 <tbody>
 <tr>
 <td>
-<code>userAttribute</code><br>
+<code>userAttribute</code><br/>
 <em>
 string
 </em>
@@ -7237,7 +7237,7 @@ string
 </tr>
 <tr>
 <td>
-<code>groupAttribute</code><br>
+<code>groupAttribute</code><br/>
 <em>
 string
 </em>
@@ -7265,7 +7265,7 @@ string
 <tbody>
 <tr>
 <td>
-<code>baseDN</code><br>
+<code>baseDN</code><br/>
 <em>
 string
 </em>
@@ -7276,7 +7276,7 @@ string
 </tr>
 <tr>
 <td>
-<code>filter</code><br>
+<code>filter</code><br/>
 <em>
 string
 </em>
@@ -7288,7 +7288,7 @@ string
 </tr>
 <tr>
 <td>
-<code>nameAttribute</code><br>
+<code>nameAttribute</code><br/>
 <em>
 string
 </em>
