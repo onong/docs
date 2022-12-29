@@ -3,13 +3,20 @@ title: Component architecture
 description: Understand the Calico Enterprise components and the basics of BGP networking.
 ---
 
+import ModalImage from 'react-modal-image';
+
 ## About {{prodname}} architecture
 
 The following diagram shows the components that comprise a Kubernetes on-premises deployment using the {{prodname}} CNI for networking and network policy.
 
 **Tip**: For best visibility, right-click on the image below and select "Open image in new tab"
 
-![calico-components](/img/calico-enterprise/master/architecture-ee.svg)
+<ModalImage
+  small='/img/calico-enterprise/master/architecture-ee.svg'
+  medium='/img/calico-enterprise/master/architecture-ee.svg'
+  alt='Architecture'
+  imageBackgroundColor='white'
+/>
 
 Calico open-source components are the foundation of {{prodname}}. {{prodname}} provides value-added components for visibility and troubleshooting, compliance, policy lifecycle management, threat and anomaly detection, and multi-cluster management.
 
