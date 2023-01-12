@@ -25,7 +25,7 @@ The following steps assume the Calico deployment is installed on `tigera-operato
 
 1. Get the Helm chart
 
-   <CodeBlock language='bash-plain-text'>
+   <CodeBlock language='batch'>
      {'{{version}}' === 'master'
        ? 'gsutil cp gs://tigera-helm-charts/tigera-operator-v0.0.tgz'
        : 'curl -O -L {{downloadsurl}}/ee/charts/tigera-operator-{{chart_version_name}}.tgz'}
@@ -33,7 +33,7 @@ The following steps assume the Calico deployment is installed on `tigera-operato
 
 1. Install the {{prodname}} custom resource definitions.
 
-   ```bash-plain-text
+   ```batch
    kubectl apply -f {{filesUrl}}/manifests/operator-crds.yaml
    kubectl apply -f {{filesUrl}}/manifests/prometheus-operator-crds.yaml
    kubectl apply -f {{filesUrl}}/manifests/eck-operator-crds.yaml
@@ -43,7 +43,7 @@ The following steps assume the Calico deployment is installed on `tigera-operato
 
 1. Run the Helm upgrade command for `tigera-operator`
 
-   <CodeBlock language='bash-plain-text'>
+   <CodeBlock language='batch'>
      {'{{version}}' === 'master'
        ? `helm upgrade calico-enterprise tigera-operator-v0.0.tgz \\
 --set-file imagePullSecrets.tigera-pull-secret=<path/to/pull/secret>,tigera-prometheus-operator.imagePullSecrets.tigera-pull-secret=<path/to/pull/secret> \\
@@ -55,19 +55,19 @@ The following steps assume the Calico deployment is installed on `tigera-operato
 
 1. Wait until the `apiserver` shows a status of `Available`, then proceed to the next section. You can monitor progress with the following command:
 
-   ```bash-plain-text
+   ```batch
    watch kubectl get tigerastatus/apiserver
    ```
 
 1. Install your {{prodname}} license.
 
-   ```bash-plain-text
+   ```batch
    kubectl apply -f </path/to/license.yaml>
    ```
 
 1. Monitor progress, wait until all components show a status of `Available`, then proceed to the next step.
 
-   ```bash-plain-text
+   ```batch
    watch kubectl get tigerastatus
    ```
 
@@ -79,6 +79,6 @@ The following steps assume the Calico deployment is installed on `tigera-operato
 
 1. Apply the following manifest to secure {{prodname}} with network policy:
 
-   ```bash-plain-text
+   ```batch
    kubectl apply -f {{filesUrl}}/manifests/tigera-policies.yaml
    ```

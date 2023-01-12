@@ -178,11 +178,7 @@ gatewayMaintenanceStartedTimestamp has value "2022-04-19T17:24:46Z"
 
 We can see above that our script saw the value of the mounted volume change at the same time what we terminated our egress gateway pod. This work can be further developed to propagate notifications to our production workloads, without any need for polling kubernetes itself.
 
-:::caution
-
-It's not recommended to couple your production applications to a Kubernetes client for the purposes of polling pod information, as it could give an attacker greater privileges if successful in compromising a workload. Instead, use a method such as the downward API that fully decouples the program.
-
-:::
+**Note**: It's not recommended to couple your production applications to a Kubernetes client for the purposes of polling pod information, as it could give an attacker greater privileges if successful in compromising a workload. Instead, use a method such as the downward API that fully decouples the program.
 
 <br />
 

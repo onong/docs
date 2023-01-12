@@ -31,7 +31,7 @@ function NodeRequirementsEnt(props) {
               <>
                 <li>CentOS 8</li>
                 <li>Ubuntu 18.04 and 20.04</li>
-                <li>RHEL 8</li>
+                <li>RHEL 7 and 8</li>
                 <li>Debian 10</li>
               </>
             )}
@@ -42,7 +42,7 @@ function NodeRequirementsEnt(props) {
             )}
             {props.orch === orchestrators.OpenStack && (
               <>
-                <li>Ubuntu 18.04</li>
+                <li>Ubuntu 18.04 and 20.04</li>
                 <li>CentOS 8</li>
               </>
             )}
@@ -150,9 +150,9 @@ function KeyValueStore(props) {
     <>
       <Heading
         as='h2'
-        id='keyvalue-store'
+        id='datastore-requirements'
       >
-        Key/value store
+        Datastore requirements
       </Heading>
       <p>
         {prodname} requires a key/value store accessible by all {prodname} components.&nbsp;
@@ -389,9 +389,9 @@ function Privileges(props) {
     <>
       <Heading
         as='h2'
-        id='privileges'
+        id='privilege-requirements'
       >
-        Privileges
+        Privilege requirements
       </Heading>
       <p>
         Ensure that {prodname} has the <code>CAP_SYS_ADMIN</code> privilege.

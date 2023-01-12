@@ -4,8 +4,6 @@ import Admonition from '@theme/Admonition';
 import CodeBlock from '@theme/CodeBlock';
 import Link from '@docusaurus/Link';
 
-import Highlight from '@site/src/components/utils/Highlight';
-
 import { baseUrl } from '../../variables';
 
 export default function EnvironmentFile(props) {
@@ -44,9 +42,9 @@ export default function EnvironmentFile(props) {
         </Admonition>
       )}
       <p>
-        Sample <Highlight>EnvironmentFile</Highlight> - save to <Highlight>/kubernetes/calico/calico.env</Highlight>
+        Sample <code>EnvironmentFile</code> - save to <code>/kubernetes/calico/calico.env</code>
       </p>
-      <CodeBlock language='bash-plain-text'>
+      <CodeBlock language='batch'>
         {`DATASTORE_TYPE=kubernetes
 CALICO_NODENAME=""
 NO_DEFAULT_POOLS="true"

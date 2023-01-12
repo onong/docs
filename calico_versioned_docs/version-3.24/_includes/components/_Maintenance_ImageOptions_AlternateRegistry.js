@@ -27,7 +27,7 @@ export default function _Maintenance_ImageOptions_AlternateRegistry() {
       <li>
         <p>Use the following commands to pull the required {prodname} images.</p>
       </li>
-      <CodeBlock language='bash-plain-text'>
+      <CodeBlock language='batch'>
         docker pull {tigeraOperator.registry}/{tigeraOperator.image}:{tigeraOperator.version}
         {'\n'}
         {cmds1}
@@ -37,7 +37,7 @@ export default function _Maintenance_ImageOptions_AlternateRegistry() {
           Retag the images with the name of your registry <code>$REGISTRY</code>.
         </p>
       </li>
-      <CodeBlock language='bash-plain-text'>
+      <CodeBlock language='batch'>
         docker tag {tigeraOperator.registry}/{tigeraOperator.image}:{tigeraOperator.version} $REGISTRY/
         {tigeraOperator.image}:{tigeraOperator.version}
         {'\n'}
@@ -46,7 +46,7 @@ export default function _Maintenance_ImageOptions_AlternateRegistry() {
       <li>
         <p>Push the images to your registry.</p>
       </li>
-      <CodeBlock language='bash-plain-text'>
+      <CodeBlock language='batch'>
         docker push $REGISTRY/{tigeraOperator.image}:{tigeraOperator.version}
         {'\n'}
         {cmds3}

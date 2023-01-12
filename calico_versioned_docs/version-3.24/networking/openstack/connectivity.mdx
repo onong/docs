@@ -83,8 +83,6 @@ servers themselves, in order to do things like request software updates.
 Again, the actual manner in which this is configured depends on your
 router.
 
-{: id="opens-external-conn-setup"}
-
 ### Part 2: Set up OpenStack
 
 In OpenStack, you want to set up two shared Neutron networks. For the
@@ -116,7 +114,7 @@ configuration is the same).
 
 From the controller, issue the following Neutron CLI command.
 
-```bash-plain-text
+```batch
 neutron net-list
 ```
 
@@ -135,7 +133,7 @@ It returns a list of the networks.
 
 Next, check the details of the `external` network.
 
-```bash-plain-text
+```batch
 neutron net-show external
 ```
 
@@ -162,7 +160,7 @@ It should return something like the following.
 
 Check the details of the `internal` network.
 
-```bash-plain-text
+```batch
 neutron net-show internal
 ```
 
@@ -189,7 +187,7 @@ It should return something like the following.
 
 Check the `external4` subnet.
 
-```bash-plain-text
+```batch
 neutron subnet-show external4
 ```
 
@@ -215,7 +213,7 @@ It should return something like the following.
 
 Check the `external6` subnet.
 
-```bash-plain-text
+```batch
 neutron subnet-show external6
 ```
 

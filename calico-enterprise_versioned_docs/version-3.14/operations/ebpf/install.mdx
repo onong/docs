@@ -303,16 +303,12 @@ data:
 EOF
 ```
 
-:::tip
-
-If you forget to create the config map before installing the operator you can create it afterwards and
-then wait 60 seconds before restarting the operator:
-
-```
-kubectl delete pod -n tigera-operator -l k8s-app=tigera-operator
-```
-
-:::
+> **Tip**: If you forget to create the config map before installing the operator you can create it afterwards and
+> then wait 60 seconds before restarting the operator:
+>
+> ```
+> kubectl delete pod -n tigera-operator -l k8s-app=tigera-operator
+> ```
 
 ### Install the Tigera Operator
 
@@ -325,7 +321,7 @@ to enable eBPF mode in the next step...
 When the main install guide tells you to apply the `custom-resources.yaml`, typically by running `kubectl create` with
 the URL of the file directly, you should instead download the file, so that you can edit it:
 
-```bash-plain-text
+```batch
 curl -o custom-resources.yaml <url of the file from the main install guide>
 ```
 
@@ -358,26 +354,22 @@ spec:
 
 Then apply the edited file:
 
-```bash-plain-text
+```batch
 kubectl create -f custom-resources.yaml
 ```
 
-:::tip
-
-If you already created the custom resources, you can switch your cluster over to eBPF mode by updating the
-installation resource. The operator will automatically apply the change.
-
-```bash-plain-text
-kubectl patch installation.operator.tigera.io default --type merge -p '{"spec":{"calicoNetwork":{"linuxDataplane":"BPF", "hostPorts":null}}}'
-```
-
-:::
+> **Tip**: If you already created the custom resources, you can switch your cluster over to eBPF mode by updating the
+> installation resource. The operator will automatically apply the change.
+>
+> ```batch
+> kubectl patch installation.operator.tigera.io default --type merge -p '{"spec":{"calicoNetwork":{"linuxDataplane":"BPF", "hostPorts":null}}}'
+> ```
 
 ### Monitor the progress of the installation
 
 You can monitor progress of the installation with the following command:
 
-```bash-plain-text
+```batch
 watch kubectl get tigerastatus
 ```
 

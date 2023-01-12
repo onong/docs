@@ -45,18 +45,15 @@ For more detail please visit [this link](https://rancher.com/docs/k3s/latest/en/
 
 - Initialize the master using the following command.
 
-```bash-plain-text
+```batch
 curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE="644" INSTALL_K3S_EXEC="--flannel-backend=none --cluster-cidr=192.168.0.0/16 --disable-network-policy --disable=traefik" sh -
 ```
 
-:::caution
-
-If 192.168.0.0/16 is already in use within your network you must select a different pod network
-CIDR by replacing 192.168.0.0/16 in the above command.
-K3s installer generates `kubeconfig` file in `etc` directory with limited permissions, using `K3S_KUBECONFIG_MODE` environment
-you are assigning necessary permissions to the file and make it accessible for other users.
-
-:::
+> **Note**: If 192.168.0.0/16 is already in use within your network you must select a different pod network
+> CIDR by replacing 192.168.0.0/16 in the above command.
+>
+> **Note**: K3s installer generates `kubeconfig` file in `etc` directory with limited permissions, using `K3S_KUBECONFIG_MODE` environment
+> you are assigning necessary permissions to the file and make it accessible for other users.
 
 ### Install {{prodname}}
 
@@ -65,13 +62,13 @@ you are assigning necessary permissions to the file and make it accessible for o
 
 Install the {{prodname}} operator and custom resource definitions.
 
-```bash-plain-text
+```batch
 kubectl create -f {{releases.0.manifests_url}}/manifests/tigera-operator.yaml
 ```
 
 Install {{prodname}} by creating the necessary custom resource. For more information on configuration options available in this manifest, see [the installation reference](../../../reference/installation/api.mdx).
 
-```bash-plain-text
+```batch
 kubectl create -f {{releases.0.manifests_url}}/manifests/custom-resources.yaml
 ```
 
@@ -87,7 +84,7 @@ you may need to change the default IP pool CIDR to match your pod network CIDR.
 
 Install {{prodname}} by using the following command.
 
-```bash-plain-text
+```batch
 kubectl apply -f {{releases.0.manifests_url}}/manifests/calico.yaml
 ```
 
@@ -134,7 +131,7 @@ You should see the following output.
 
 1. Confirm that all of the pods are running using the following command.
 
-```bash-plain-text
+```batch
 watch kubectl get pods --all-namespaces
 ```
 
@@ -174,7 +171,7 @@ kube-system   coredns-8655855d6-blzl5                    1/1     Running   0    
 2. Confirm that you now have a node in your cluster with the
    following command.
 
-```bash-plain-text
+```batch
 kubectl get nodes -o wide
 ```
 

@@ -9,7 +9,7 @@ set to `network-access`.
 The following sample command creates a GlobalReport that results in a daily network access report for
 endpoints in the `public` namespace.
 
-```bash-plain-text
+```batch
 kubectl apply -f - << EOF
 apiVersion: projectcalico.org/v3
 kind: GlobalReport
@@ -27,13 +27,9 @@ spec:
 EOF
 ```
 
-:::caution
-
-There is a known issue that audit logs do not contain deletion events for resources that were
-deleted implicitly as part of a namespace deletion event. Currently, this means policies and pods that have been
-deleted in this way may still appear in the reports that cover any period within the next day.
-
-:::
+> **Note**: There is a known issue that audit logs do not contain deletion events for resources that were
+> deleted implicitly as part of a namespace deletion event. Currently, this means policies and pods that have been
+> deleted in this way may still appear in the reports that cover any period within the next day.
 
 ## Downloadable reports
 

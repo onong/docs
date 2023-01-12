@@ -40,7 +40,7 @@ The following steps will outline the installation of {{prodname}} networking on 
 
 1. Download the necessary Installation custom resource.
 
-   ```bash-plain-text
+   ```batch
    wget {{filesUrl}}/manifests/custom-resources.yaml
    ```
 
@@ -94,7 +94,7 @@ The following steps will outline the installation of {{prodname}} networking on 
 
 1. Apply the updated custom resources:
 
-   ```bash-plain-text
+   ```batch
    kubectl create -f custom-resources.yaml
    ```
 
@@ -102,7 +102,7 @@ The following steps will outline the installation of {{prodname}} networking on 
 
 1. Configure strict affinity:
 
-   ```bash-plain-text
+   ```batch
    calicoctl ipam configure --strictaffinity=true
    ```
 

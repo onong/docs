@@ -37,7 +37,7 @@ Enabling preinstalled {{prodname}} might be the quickest way for testing. Howeve
 
 :::
 
-```bash-plain-text
+```batch
 minikube start --network-plugin=cni --cni=calico
 ```
 
@@ -52,13 +52,13 @@ If `192.168.0.0/16` is already in use within your network you must select a diff
 
 :::
 
-```bash-plain-text
+```batch
 minikube start --network-plugin=cni --extra-config=kubeadm.pod-network-cidr=192.168.0.0/16
 ```
 
 Install the Tigera {{prodname}} operator and custom resource definitions.
 
-```bash-plain-text
+```batch
 kubectl create -f {{releases.0.manifests_url}}/manifests/tigera-operator.yaml
 ```
 
@@ -71,7 +71,7 @@ if you have replaced `pod-network-cidr` you must change it in this file as well.
 
 :::
 
-```bash-plain-text
+```batch
 kubectl create -f {{releases.0.manifests_url}}/manifests/custom-resources.yaml
 ```
 
@@ -80,13 +80,13 @@ kubectl create -f {{releases.0.manifests_url}}/manifests/custom-resources.yaml
 
 Start your minikube cluster with one master node using the following command.
 
-```bash-plain-text
+```batch
 minikube start --network-plugin=cni
 ```
 
 Install {{prodname}}.
 
-```bash-plain-text
+```batch
 kubectl apply -f {{releases.0.manifests_url}}/manifests/calico.yaml
 ```
 
@@ -97,7 +97,7 @@ kubectl apply -f {{releases.0.manifests_url}}/manifests/calico.yaml
 
 You can verify {{prodname}} installation in your cluster by issuing the following command.
 
-```bash-plain-text
+```batch
 watch kubectl get pods -l k8s-app=calico-node -A
 ```
 
@@ -120,13 +120,13 @@ This as an optional step, you can safely skip this step if you do not require an
 
 :::
 
-```bash-plain-text
+```batch
 minikube node add
 ```
 
 Verify nodes using the following command
 
-```bash-plain-text
+```batch
 kubectl get nodes
 ```
 
@@ -134,7 +134,7 @@ kubectl get nodes
 
 Issuing a delete command will destroy the cluster that you created in this tutorial.
 
-```bash-plain-text
+```batch
 minikube delete
 ```
 

@@ -20,12 +20,8 @@ If you have installed {{prodname}} using the `calico.yaml` manifest, we recommen
 
 - [Upgrading an installation that connects directly to an etcd datastore](#upgrading-an-installation-that-uses-an-etcd-datastore)
 
-:::caution
-
-Do not use older versions of `calicoctl` after the upgrade.
-This may result in unexpected behavior and data.
-
-:::
+> **Important**: Do not use older versions of `calicoctl` after the upgrade.
+> This may result in unexpected behavior and data.
 
 <HostEndpointsUpgrade orch='Kubernetes' />
 
@@ -75,7 +71,7 @@ the output and then re-running the command without --dry-run to commit to the ch
 
 1. Run the helm upgrade:
 
-   ```bash-plain-text
+   ```batch
    helm upgrade {{prodnamedash}} projectcalico/tigera-operator
    ```
 
@@ -83,13 +79,13 @@ the output and then re-running the command without --dry-run to commit to the ch
 
 1. Download the {{version}} operator manifest.
 
-   ```bash-plain-text
+   ```batch
    curl {{releases.0.manifests_url}}/manifests/tigera-operator.yaml -O
    ```
 
 1. Use the following command to initiate an upgrade.
 
-   ```bash-plain-text
+   ```batch
    kubectl apply -f tigera-operator.yaml
    ```
 
@@ -99,19 +95,19 @@ the output and then re-running the command without --dry-run to commit to the ch
 
    **{{prodname}} for policy and networking**
 
-   ```bash-plain-text
+   ```batch
    curl {{releases.0.manifests_url}}/manifests/calico.yaml -O
    ```
 
    **{{prodname}} for policy and flannel for networking**
 
-   ```bash-plain-text
+   ```batch
    curl {{releases.0.manifests_url}}/manifests/canal.yaml -O
    ```
 
    **{{prodname}} for policy (advanced)**
 
-   ```bash-plain-text
+   ```batch
    curl {{releases.0.manifests_url}}/manifests/calico-policy-only.yaml -O
    ```
 
@@ -148,7 +144,7 @@ the output and then re-running the command without --dry-run to commit to the ch
 
 1. Use the following command to check the {{prodname}} version number.
 
-   ```bash-plain-text
+   ```batch
    calicoctl version
    ```
 
@@ -168,13 +164,13 @@ the output and then re-running the command without --dry-run to commit to the ch
 
    **{{prodname}} for policy and networking**
 
-   ```bash-plain-text
+   ```batch
    curl {{releases.0.manifests_url}}/manifests/calico-etcd.yaml -O
    ```
 
    **{{prodname}} for policy and flannel for networking**
 
-   ```bash-plain-text
+   ```batch
    curl {{releases.0.manifests_url}}/manifests/canal-etcd.yaml -O
    ```
 
@@ -219,7 +215,7 @@ the output and then re-running the command without --dry-run to commit to the ch
 
 1. Use the following command to check the {{prodname}} version number.
 
-   ```bash-plain-text
+   ```batch
    calicoctl version
    ```
 
@@ -245,7 +241,7 @@ take the following steps to upgrade the Dikastes sidecars running in your applic
 1. Update the Istio sidecar injector template to use the new version of Dikastes. Replace `<your Istio version>` below with
    the full version string of your Istio install, for example `1.4.2`.
 
-   ```bash-plain-text
+   ```batch
    kubectl apply -f {{releases.0.manifests_url}}/manifests/alp/istio-inject-configmap-<your Istio version>.yaml
    ```
 

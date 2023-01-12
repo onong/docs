@@ -5,7 +5,7 @@ import React from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import Heading from '@theme/Heading';
 
-import { chart_version_name, prodname, prodnamedash, version } from '../../variables';
+import { chart_version_name, prodname, prodnamedash, version, filesUrl } from '../../variables';
 
 export default function _GettingStarted_InstallOnClusters_Kubernetes_Helm() {
   return (
@@ -31,9 +31,7 @@ export default function _GettingStarted_InstallOnClusters_Kubernetes_Helm() {
             example:
           </p>
         </li>
-        <CodeBlock language='bash-plain-text'>
-          {`echo '{ installation: {kubernetesProvider: EKS }}' > values.yaml`}
-        </CodeBlock>
+        <CodeBlock language='batch'>{`echo '{ installation: {kubernetesProvider: EKS }}' > values.yaml`}</CodeBlock>
         <p>
           For Azure AKS cluster with no Kubernetes CNI pre-installed, create <code>values.yaml</code> with the following
           command:
@@ -76,7 +74,7 @@ EOF`}
             Create the <code>tigera-operator</code> namespace:
           </p>
           <pre>
-            <code class='language-bash-plain-text'>kubectl create namespace tigera-operator</code>
+            <code class='language-batch'>kubectl create namespace tigera-operator</code>
           </pre>
         </li>
         <li>
@@ -91,15 +89,22 @@ EOF`}
             Monitor progress, wait until <code>apiserver</code> shows a status of <code>Available</code>, then proceed
             to the next step.
           </p>
-          <CodeBlock language='bash-plain-text'>watch kubectl get tigerastatus/apiserver</CodeBlock>
+          <CodeBlock language='batch'>watch kubectl get tigerastatus/apiserver</CodeBlock>
         </li>
         <li>
           <p>Install your {prodname} license:</p>
-          <CodeBlock language='bash-plain-text'>kubectl apply -f &lt;/path/to/license.yaml&gt;</CodeBlock>
+          <CodeBlock language='batch'>kubectl apply -f &lt;/path/to/license.yaml&gt;</CodeBlock>
         </li>
         <li>
-          <p>You can now monitor progress with the following command:</p>
-          <CodeBlock language='bash-plain-text'>watch kubectl get tigerastatus</CodeBlock>
+          <p>
+            Monitor progress, wait until all components show a status of <code>Available</code>, then proceed to the
+            next step.
+          </p>
+          <CodeBlock language='batch'>watch kubectl get tigerastatus</CodeBlock>
+        </li>
+        <li>
+          <p>Apply the following manifest to secure {prodname} with network policy:</p>
+          <CodeBlock language='batch'>{`kubectl apply -f  ${filesUrl}/manifests/tigera-policies.yaml`}</CodeBlock>
         </li>
         <p>Congratulations! You have now installed {prodname} using the Helm 3 chart.</p>
       </ol>
@@ -113,12 +118,10 @@ EOF`}
           <li>
             <p>Install the Google cloud storage helm repo plugin:</p>
           </li>
-          <CodeBlock language='bash-plain-text'>
-            helm plugin install https://github.com/viglesiasce/helm-gcs.git
-          </CodeBlock>
+          <CodeBlock language='batch'>helm plugin install https://github.com/viglesiasce/helm-gcs.git</CodeBlock>
           <li>
             <p>Add the Calico helm repo:</p>
-            <CodeBlock language='bash-plain-text'>helm repo add tigera gs://tigera-helm-charts</CodeBlock>
+            <CodeBlock language='batch'>helm repo add tigera gs://tigera-helm-charts</CodeBlock>
           </li>
         </ol>
       );
@@ -129,7 +132,7 @@ EOF`}
         <ol>
           <li>
             <p>Get the Helm chart:</p>
-            <CodeBlock language='bash-plain-text'>
+            <CodeBlock language='batch'>
               {`curl -O -L https://downloads.tigera.io/ee/charts/tigera-operator-${chart_version_name}.tgz`}
             </CodeBlock>
           </li>
@@ -140,19 +143,17 @@ EOF`}
 
   function renderCond2() {
     if (version === 'master') {
-      return <CodeBlock language='bash-plain-text'>helm show values tigera/tigera-operator --version v0.0</CodeBlock>;
+      return <CodeBlock language='batch'>helm show values tigera/tigera-operator --version v0.0</CodeBlock>;
     }
 
-    return (
-      <CodeBlock language='bash-plain-text'>{`helm show values ./tigera-operator-${chart_version_name}.tgz`}</CodeBlock>
-    );
+    return <CodeBlock language='batch'>{`helm show values ./tigera-operator-${chart_version_name}.tgz`}</CodeBlock>;
   }
 
   function renderCond3() {
     if (version === 'master') {
       return (
         <>
-          <CodeBlock language='bash-plain-text'>
+          <CodeBlock language='batch'>
             {`helm install calico-enterprise tigera/tigera-operator --version v0.0 \\
 --set-file imagePullSecrets.tigera-pull-secret=<path/to/pull/secret>,tigera-prometheus-operator.imagePullSecrets.tigera-pull-secret=<path/to/pull/secret> \\
 --namespace tigera-operator`}
@@ -160,7 +161,7 @@ EOF`}
           <p>
             or if you created a <code>values.yaml</code> above:
           </p>
-          <CodeBlock language='bash-plain-text'>
+          <CodeBlock language='batch'>
             {`helm install calico-enterprise tigera/tigera-operator --version v0.0 -f values.yaml \\
 --set-file imagePullSecrets.tigera-pull-secret=<path/to/pull/secret>,tigera-prometheus-operator.imagePullSecrets.tigera-pull-secret=<path/to/pull/secret> \\
 --namespace tigera-operator`}
@@ -171,7 +172,7 @@ EOF`}
 
     return (
       <>
-        <CodeBlock language='bash-plain-text'>
+        <CodeBlock language='batch'>
           {`helm install calico-enterprise tigera-operator-${chart_version_name}.tgz \\
 --set-file imagePullSecrets.tigera-pull-secret=<path/to/pull/secret>,tigera-prometheus-operator.imagePullSecrets.tigera-pull-secret=<path/to/pull/secret> \\
 --namespace tigera-operator`}
@@ -179,7 +180,7 @@ EOF`}
         <p>
           or if you created a <code>values.yaml</code> above:
         </p>
-        <CodeBlock language='bash-plain-text'>
+        <CodeBlock language='batch'>
           {`helm install calico-enterprise tigera-operator-${chart_version_name}.tgz -f values.yaml \\
 --set-file imagePullSecrets.tigera-pull-secret=<path/to/pull/secret>,tigera-prometheus-operator.imagePullSecrets.tigera-pull-secret=<path/to/pull/secret> \\
 --namespace tigera-operator`}

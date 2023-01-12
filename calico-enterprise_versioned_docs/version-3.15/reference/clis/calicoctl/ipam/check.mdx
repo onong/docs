@@ -34,7 +34,7 @@ Example workflow for checking consistency and releasing leaked addresses.
 
 **Lock the data store**
 
-```bash-plain-text
+```batch
 calicoctl datastore migrate lock
 ```
 
@@ -46,19 +46,19 @@ Once the data store is locked, new pods will not be able to be launched until th
 
 **Generate a report using the check command**
 
-```bash-plain-text
+```batch
 calicoctl ipam check -o report.json
 ```
 
 **Release any unnecessary addresses**
 
-```bash-plain-text
+```batch
 calicoctl ipam release --from-report report.json
 ```
 
 **Unlock the data store**
 
-```bash-plain-text
+```batch
 calicoctl datastore migrate unlock
 ```
 

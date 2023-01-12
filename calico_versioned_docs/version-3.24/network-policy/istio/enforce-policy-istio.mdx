@@ -32,7 +32,7 @@ application layer policy. The [YAO Bank](https://github.com/projectcalico/yaoban
 customer-facing web application, a microservice that serves up account
 summaries, and an [etcd](https://github.com/coreos/etcd) datastore.
 
-```bash-plain-text
+```batch
 kubectl apply -f {{filesUrl}}/security/tutorials/app-layer-policy/manifests/10-yaobank.yaml
 ```
 
@@ -62,7 +62,7 @@ You will use the `istio-ingressgateway` service to access the YAO Bank
 application. Determine your ingress host and port [following the Istio instructions](https://istio.io/docs/tasks/traffic-management/ingress/ingress-control/#determining-the-ingress-ip-and-ports). Once you have the `INGRESS_HOST` and `INGRESS_PORT` variables set, you can
 set the `GATEWAY_URL` as follows.
 
-```bash-plain-text
+```batch
 export GATEWAY_URL=$INGRESS_HOST:$INGRESS_PORT
 ```
 
@@ -97,9 +97,8 @@ the YAO Bank application. The customer web service does not need, and should
 not have direct access to the backend database. The customer web service needs
 to directly interact with clients outside the cluster, some of whom may be
 malicious. Unfortunately, vulnerabilities in web applications are all too
-common. For example, an {% include open-new-window.html text='unpatched
-vulnerability in Apache Struts'
-url='https://nvd.nist.gov/vuln/detail/CVE-2017-5638' %} is what allowed
+common. For example, an [unpatched
+vulnerability in Apache Struts](https://nvd.nist.gov/vuln/detail/CVE-2017-5638) is what allowed
 attackers their initial access into the Equifax network where they then
 launched a devastating attack to steal millions of people's financial
 information.

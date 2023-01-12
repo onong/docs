@@ -56,7 +56,7 @@ export default function InstallOpenShift(props) {
         Override the OpenShift networking to use {prodname} and update the AWS instance types to meet the{' '}
         <Link href={`${baseUrl}/getting-started/install-on-clusters/openshift/requirements`}>system requirements</Link>:
       </p>
-      <CodeBlock language='bash-plain-text'>
+      <CodeBlock language='batch'>
         sed -i 's/OpenShiftSDN/Calico/' install-config.yaml{'\n'}
         sed -i 's/platform: {}/platform:\n{'\t'}aws:\n{'\t'}type: m4.xlarge/g' install-config.yaml
       </CodeBlock>
@@ -68,7 +68,7 @@ export default function InstallOpenShift(props) {
         Generate the install manifests
       </Heading>
       <p>Now generate the Kubernetes manifests using your configuration file:</p>
-      <CodeBlock language='bash-plain-text'>openshift-install create manifests</CodeBlock>
+      <CodeBlock language='batch'>openshift-install create manifests</CodeBlock>
 
       <InstallOpenShiftManifests />
 
@@ -80,7 +80,7 @@ export default function InstallOpenShift(props) {
             Edit the Installation custom resource manifest <code>manifests/01-cr-installation.yaml</code> so that it
             enables VXLAN and disables BGP. This is required for {prodnameWindows}:
           </p>
-          <CodeBlock>
+          <CodeBlock language='yaml'>
             {`apiVersion: operator.tigera.io/v1
 kind: Installation
 metadata:
@@ -203,9 +203,7 @@ spec:
             Download the Tigera custom resources. For more information on configuration options available in this
             manifest, see <Link href={`${baseUrl}/reference/installation/api`}>the installation reference</Link>.
           </p>
-          <CodeBlock language='bash-plain-text'>
-            curl -O -L {filesUrl}/manifests/tigera-enterprise-resources.yaml
-          </CodeBlock>
+          <CodeBlock language='batch'>curl -O -L {filesUrl}/manifests/tigera-enterprise-resources.yaml</CodeBlock>
           <p>
             Remove the <code>Manager</code> custom resource from the manifest file.
           </p>
@@ -241,7 +239,7 @@ spec:
         props.clusterType !== 'managed',
         <>
           <p>Apply the custom resources for enterprise features.</p>
-          <CodeBlock language='bash-plain-text'>oc create -f "/manifests/tigera-enterprise-resources.yaml"</CodeBlock>
+          <CodeBlock language='batch'>oc create -f "/manifests/tigera-enterprise-resources.yaml"</CodeBlock>
         </>
       )}
 
@@ -249,6 +247,22 @@ spec:
 
       <p>You can now monitor progress with the following command:</p>
       <CodeBlock>watch oc get tigerastatus</CodeBlock>
+      <p>
+        When it shows all components with status <code>Available</code>, proceed to the next section.
+      </p>
+
+      {props.clusterType == 'managed' && (
+        <>
+          <Heading
+            as='h4'
+            id={`sucure-${prodnamedash}-components-with-network-policy`}
+          >
+            Secure {prodname} components with network policy
+          </Heading>
+          <p>To secure the components that make up {prodname}, install the following set of network policies.</p>
+          <CodeBlock>oc create -f {filesUrl}/manifests/ocp/tigera-policies-managed.yaml</CodeBlock>
+        </>
+      )}
 
       {maybeRender(
         props.clusterType === 'management',
@@ -275,7 +289,7 @@ spec:
                 </Link>
                 . Apply the following service manifest.
               </p>
-              <CodeBlock language='bash-plain-text'>
+              <CodeBlock language='batch'>
                 {`oc create -f - <<EOF
 apiVersion: v1
 kind: Service
@@ -299,9 +313,7 @@ EOF`}
                 Export the service port number, and the public IP or host of the management cluster. (Ex.
                 "example.com:1234" or "10.0.0.10:1234".)
               </p>
-              <CodeBlock language='bash-plain-text'>
-                {'export MANAGEMENT_CLUSTER_ADDR=<your-management-cluster-addr>'}
-              </CodeBlock>
+              <CodeBlock language='batch'>{'export MANAGEMENT_CLUSTER_ADDR=<your-management-cluster-addr>'}</CodeBlock>
             </li>
             <li>
               <p>
@@ -311,7 +323,7 @@ EOF`}
                 </Link>{' '}
                 CR.
               </p>
-              <CodeBlock language='bash-plain-text'>
+              <CodeBlock language='batch'>
                 {`oc apply -f - <<EOF
 apiVersion: operator.tigera.io/v1
 kind: ManagementCluster
@@ -339,7 +351,7 @@ EOF`}
                 Create an admin user called, <code>mcm-user</code> in the default namespace with full permissions, by
                 applying the following commands.
               </p>
-              <CodeBlock language='bash-plain-text'>
+              <CodeBlock language='batch'>
                 oc create sa mcm-user{'\n'}
                 oc create clusterrolebinding mcm-user-admin --serviceaccount=default:mcm-user
                 --clusterrole=tigera-network-admin
@@ -347,7 +359,7 @@ EOF`}
             </li>
             <li>
               <p>Get the login token for your new admin user, and log in to {prodname} Manager.</p>
-              <CodeBlock language='bash-plain-text'>
+              <CodeBlock language='batch'>
                 {`oc get secret $(oc get serviceaccount mcm-user -o jsonpath='{range .secrets[*]}{.name}{"\n"}{end}' | grep token) -o go-template='{{.data.token | base64decode}}' && echo`}
               </CodeBlock>
               <p>
@@ -384,7 +396,7 @@ EOF`}
             Let&#39;s define admin-level permissions for the service account (<code>mcm-user</code>) we created to log
             in to the Manager UI. Run the following command against your managed cluster.
           </p>
-          <CodeBlock language='bash-plain-text'>
+          <CodeBlock language='batch'>
             oc create clusterrolebinding mcm-user-admin --serviceaccount=default:mcm-user
             --clusterrole=tigera-network-admin
           </CodeBlock>
@@ -410,7 +422,7 @@ function InstallOpenShiftWindows() {
         Next, <Link href={`${baseUrl}/maintenance/clis/calicoctl/install`}>install calicoctl</Link> and ensure strict
         affinity is true:
       </p>
-      <CodeBlock language='bash-plain-text'>calicoctl ipam configure --strictaffinity=true</CodeBlock>
+      <CodeBlock language='batch'>calicoctl ipam configure --strictaffinity=true</CodeBlock>
       <Heading
         as='h4'
         id='add-windows-nodes-to-the-cluster'
@@ -441,7 +453,7 @@ function InstallOpenShiftWindows() {
         Next, run <code>wni</code> to add a Windows node to your cluster. Replace AMI_ID, AWS_CREDENTIALS_PATH,
         AWS_KEY_NAME and AWS_PRIVATE_KEY_PATH with your values:
       </p>
-      <CodeBlock language='bash-plain-text'>
+      <CodeBlock language='batch'>
         {`chmod u+x wni
 ./wni aws create \\
   --image-id AMI_ID \\
@@ -485,7 +497,7 @@ $ ./wni aws create \
         Use the instance ID from the file and the path of the private key used to create the instance to get the
         Administrator user's password:
       </p>
-      <CodeBlock language='bash-plain-text'>
+      <CodeBlock language='batch'>
         {'aws ec2 get-password-data --instance-id <instance id> --priv-launch-key <aws private key path>'}
       </CodeBlock>
 
@@ -549,7 +561,7 @@ Kubernetes Version: v1.18.3+5302882`}
         </li>
         <li>
           <p>Verify kube-proxy service is running.</p>
-          <CodeBlock language='bash-plain-text'>Get-Service -Name kube-proxy</CodeBlock>
+          <CodeBlock language='batch'>Get-Service -Name kube-proxy</CodeBlock>
         </li>
       </ol>
       <Heading
@@ -610,7 +622,7 @@ c:\k\kubectl --kubeconfig c:\k\config -n openshift-kube-apiserver exec $apiserve
         We need to approve the CSR&#39;s generated by the kubelet&#39;s bootstrapping process. First, view the pending
         CSR&#39;s:
       </p>
-      <CodeBlock language='bash-plain-text'>oc get csr</CodeBlock>
+      <CodeBlock language='batch'>oc get csr</CodeBlock>
       <p>For example:</p>
       <CodeBlock>
         {`$ oc get csr
@@ -620,7 +632,7 @@ csr-bmnfd   4m30s   kubernetes.io/kubelet-serving                 system:node:ip
 csr-hwl89   5m1s    kubernetes.io/kube-apiserver-client-kubelet   system:serviceaccount:openshift-machine-config-operator:node-bootstrapper   Pending`}
       </CodeBlock>
       <p>To approve the pending CSR's:</p>
-      <CodeBlock language='bash-plain-text'>oc get csr -o name | xargs oc adm certificate approve</CodeBlock>
+      <CodeBlock language='batch'>oc get csr -o name | xargs oc adm certificate approve</CodeBlock>
       <p>For example:</p>
       <CodeBlock>
         {`$ oc get csr -o name | xargs oc adm certificate approve

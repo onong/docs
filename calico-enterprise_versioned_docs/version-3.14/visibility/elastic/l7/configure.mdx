@@ -48,17 +48,13 @@ L7 logs are visible in the Manager UI, service graph, in the HTTP tab.
 
 **Required**
 
-:::caution
-
-L7 logs require a minimum of 1 additional GB of log storage per node, per one day retention period. Adjust your [Log Storage](https://docs.tigera.io/maintenance/logstorage/adjust-log-storage-size) now.
-
-:::
+> **Important**: L7 logs require a minimum of 1 additional GB of log storage per node, per one day retention period. Adjust your [Log Storage](https://docs.tigera.io/maintenance/logstorage/adjust-log-storage-size) now.
 
 - Configure Felix for log data collection
 
   Enable the Policy Sync API in Felix. To do this cluster-wide, modify the `default` FelixConfiguration to set the field `policySyncPathPrefix` to `/var/run/nodeagent`.
 
-  ```bash-plain-text
+  ```batch
   kubectl patch felixconfiguration default --type='merge' -p '{"spec":{"policySyncPathPrefix":"/var/run/nodeagent"}}'
   ```
 

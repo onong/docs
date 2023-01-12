@@ -3,7 +3,6 @@ import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
 
 import { toKebab } from '@site/src/components/utils/formatters';
-import Highlight from '@site/src/components/utils/Highlight';
 
 import variables from '../../variables';
 
@@ -61,10 +60,10 @@ export default function ReleaseNotes() {
           </Heading>
           <p>
             This release comprises the following components, and can be installed using{' '}
-            <Highlight>
+            <code>
               {release['tigera-operator'].registry}/{release['tigera-operator'].image}:
               {release['tigera-operator'].version}
-            </Highlight>
+            </code>
           </p>
           <table>
             <thead>

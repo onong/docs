@@ -54,11 +54,7 @@ Using a LoadBalancer may require additional steps, depending on how you provisio
 
 :::
 
-:::caution
-
-If you previously set up a management cluster with a service, don’t forget to update the IP address in each managed clusters, by editing the `ManagementClusterConnection` [manifest that you downloaded](create-a-managed-cluster.mdx) and apply it, or use `kubectl edit managementclusterconnection tigera-secure`.
-
-:::
+> **Important!**: If you previously set up a management cluster with a service, don’t forget to update the IP address in each managed clusters, by editing the `ManagementClusterConnection` [manifest that you downloaded](create-a-managed-cluster.mdx) and apply it, or use `kubectl edit managementclusterconnection tigera-secure`.
 
 ### Review user permissions
 
@@ -75,7 +71,7 @@ Log data across all managed clusters is stored in a centralized Elasticsearch wi
 
 {{prodname}} log data is stored within Elasticsearch indexes. The indexes have the following naming scheme:
 
-```bash-plain-text
+```batch
 <log-type>.<cluster-name>.<date>
 ```
 

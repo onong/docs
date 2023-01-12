@@ -47,7 +47,7 @@ If your cluster already has {{prodname}} installed, follow the [Upgrading {{prod
 
 Make the manifests directory.
 
-```bash-plain-text
+```batch
 mkdir manifests
 ```
 
@@ -63,27 +63,27 @@ mkdir manifests
 
 1. Apply the Tigera operators and custom resource definitions.
 
-   ```bash-plain-text
-   oc apply -f manifests/
+   ```batch
+   oc apply --server-side --force-conflicts -f manifests/
    ```
 
 2. (Optional) If your cluster architecture requires any custom [Calico resources](../../../reference/resources/index.mdx) to function at startup, install them now using [calicoctl](../../../reference/clis/calicoctl/overview.mdx).
 
 3. Apply the custom resources for enterprise features, see [the installation reference](../../../reference/installation/api.mdx).
 
-   ```bash-plain-text
+   ```batch
    oc apply -f {{filesUrl}}/manifests/ocp/tigera-enterprise-resources-upgrade.yaml
    ```
 
 4. Patch installation.
 
-   ```bash-plain-text
+   ```batch
    oc patch installations.operator.tigera.io default --type merge -p '{"spec":{"variant":"TigeraSecureEnterprise","imagePullSecrets":[{"name":"tigera-pull-secret"}]}}'
    ```
 
 5. You can now monitor the upgrade progress with the following command:
 
-   ```bash-plain-text
+   ```batch
    watch oc get tigerastatus
    ```
 
@@ -117,6 +117,6 @@ When all components show a status of `Available`, proceed to the next section.
 
 To secure {{prodname}} component communications, install the following set of network policies.
 
-```bash-plain-text
+```batch
 oc apply -f {{filesUrl}}/manifests/ocp/tigera-policies.yaml
 ```

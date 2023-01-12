@@ -10,11 +10,7 @@ import TabItem from '@theme/TabItem';
 
 Use Calico to accelerate network performance of routing network traffic via Istio Envoy sidecar.
 
-:::caution
-
-This feature is experimental and should not be used in production clusters. It uses a recent Linux kernel feature (eBPF SOCKMAP), which our testing confirms requires upstream kernel enhancements to reliably and securely support production clusters. We are contributing fixes to the kernel where needed.
-
-:::
+> **Warning!** This feature is experimental and should not be used in production clusters. It uses a recent Linux kernel feature (eBPF SOCKMAP), which our testing confirms requires upstream kernel enhancements to reliably and securely support production clusters. We are contributing fixes to the kernel where needed.
 
 ## Value
 
@@ -48,7 +44,7 @@ To enable sidecar acceleration for Istio-enabled apps using Calico:
 <Tabs>
 <TabItem label="kubectl" value="kubectl-0">
 
-```bash-plain-text
+```batch
 kubectl patch felixconfiguration default --type merge --patch '{"spec":{"sidecarAccelerationEnabled": true}}'
 ```
 
@@ -61,7 +57,7 @@ felixconfiguration.projectcalico.org/default patched
 </TabItem>
 <TabItem label="calicoctl" value="calicoctl-1">
 
-```bash-plain-text
+```batch
 calicoctl patch felixconfiguration default  --patch '{"spec":{"sidecarAccelerationEnabled": true}}'
 ```
 

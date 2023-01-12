@@ -10,11 +10,7 @@ import TabItem from '@theme/TabItem';
 
 Install {{prodname}} and enable the beta release of the VPP dataplane.
 
-:::caution
-
-The VPP dataplane is in beta and should not be used in production clusters. It has had lots of testing and is pretty stable. However, chances are that some bugs are still lurking around (please report these on the [Calico Users slack](https://calicousers.slack.com/archives/C017220EXU1) or [Github](https://github.com/projectcalico/vpp-dataplane/issues)). In addition, it still does not support all the features of {{prodname}}.
-
-:::
+> **Warning!** The VPP dataplane is in beta and should not be used in production clusters. It has had lots of testing and is pretty stable. However, chances are that some bugs are still lurking around (please report these on the [Calico Users slack](https://calicousers.slack.com/archives/C017220EXU1) or [Github](https://github.com/projectcalico/vpp-dataplane/issues)). In addition, it still does not support all the features of {{prodname}}.
 
 ## Value
 
@@ -81,13 +77,13 @@ Before you get started, make sure you have downloaded and configured the [necess
 
 1. First, create an Amazon EKS cluster without any nodes.
 
-   ```bash-plain-text
+   ```batch
    eksctl create cluster --name my-calico-cluster --without-nodegroup
    ```
 
 1. Since this cluster will use {{prodname}} for networking, you must delete the `aws-node` DaemonSet to disable the default AWS VPC networking for the pods.
 
-   ```bash-plain-text
+   ```batch
    kubectl delete daemonset -n kube-system aws-node
    ```
 
@@ -95,7 +91,7 @@ Before you get started, make sure you have downloaded and configured the [necess
 
 1. Now that you have an empty cluster configured, you can install the Tigera operator.
 
-   ```bash-plain-text
+   ```batch
    kubectl apply -f {{releases.0.manifests_url}}/manifests/tigera-operator.yaml
    ```
 
@@ -108,19 +104,19 @@ Before you get started, make sure you have downloaded and configured the [necess
 
    :::
 
-   ```bash-plain-text
+   ```batch
    kubectl apply -f https://raw.githubusercontent.com/projectcalico/vpp-dataplane/{{vppbranch}}/yaml/calico/installation-eks.yaml
    ```
 
 1. Now is time to install the VPP dataplane components.
 
-   ```bash-plain-text
+   ```batch
    kubectl apply -f https://raw.githubusercontent.com/projectcalico/vpp-dataplane/{{vppbranch}}/yaml/generated/calico-vpp-eks.yaml
    ```
 
 1. Finally, add nodes to the cluster.
 
-   ```bash-plain-text
+   ```batch
    eksctl create nodegroup --cluster my-calico-cluster --node-type t3.medium --node-ami auto --max-pods-per-node 50
    ```
 
@@ -143,13 +139,13 @@ DPDK provides better performance compared to the standard install but it require
 
 1. First, create an Amazon EKS cluster without any nodes.
 
-   ```bash-plain-text
+   ```batch
    eksctl create cluster --name my-calico-cluster --without-nodegroup
    ```
 
 2. Since this cluster will use {{prodname}} for networking, you must delete the `aws-node` DaemonSet to disable the default AWS VPC networking for the pods.
 
-   ```bash-plain-text
+   ```batch
    kubectl delete daemonset -n kube-system aws-node
    ```
 
@@ -157,7 +153,7 @@ DPDK provides better performance compared to the standard install but it require
 
 1. Now that you have an empty cluster configured, you can install the Tigera operator.
 
-   ```bash-plain-text
+   ```batch
    kubectl apply -f {{releases.0.manifests_url}}/manifests/tigera-operator.yaml
    ```
 
@@ -170,13 +166,13 @@ DPDK provides better performance compared to the standard install but it require
 
    :::
 
-   ```bash-plain-text
+   ```batch
    kubectl apply -f https://raw.githubusercontent.com/projectcalico/vpp-dataplane/{{vppbranch}}/yaml/calico/installation-eks.yaml
    ```
 
 3. Now is time to install the VPP dataplane components.
 
-   ```bash-plain-text
+   ```batch
    kubectl apply -f https://raw.githubusercontent.com/projectcalico/vpp-dataplane/{{vppbranch}}/yaml/generated/calico-vpp-eks-dpdk.yaml
    ```
 
@@ -236,7 +232,7 @@ For some hardware, the following hugepages configuration may enable VPP to use m
 - At least 512 x 2MB-hugepages are available (`grep HugePages_Free /proc/meminfo`)
 - The `vfio-pci` (`vfio_pci` on centos) or `uio_pci_generic` kernel module is loaded. For example:
 
-  ```bash-plain-text
+  ```batch
   echo "vfio-pci" > /etc/modules-load.d/95-vpp.conf
   modprobe vfio-pci
   echo "vm.nr_hugepages = 512" >> /etc/sysctl.conf
@@ -250,7 +246,7 @@ For some hardware, the following hugepages configuration may enable VPP to use m
 
 1. Start by installing the Tigera operator on your cluster.
 
-   ```bash-plain-text
+   ```batch
    kubectl apply -f {{releases.0.manifests_url}}/manifests/tigera-operator.yaml
    ```
 
@@ -263,7 +259,7 @@ For some hardware, the following hugepages configuration may enable VPP to use m
 
    :::
 
-   ```bash-plain-text
+   ```batch
    kubectl apply -f https://raw.githubusercontent.com/projectcalico/vpp-dataplane/{{vppbranch}}/yaml/calico/installation-default.yaml
    ```
 
@@ -271,12 +267,12 @@ For some hardware, the following hugepages configuration may enable VPP to use m
 
 Start by getting the appropriate yaml manifest for the VPP dataplane resources:
 
-```bash-plain-text
+```batch
  If you have configured hugepages on your machines
 curl -o calico-vpp.yaml https://raw.githubusercontent.com/projectcalico/vpp-dataplane/{{vppbranch}}/yaml/generated/calico-vpp.yaml
 ```
 
-```bash-plain-text
+```batch
  If not, or if you're unsure
 curl -o calico-vpp.yaml https://raw.githubusercontent.com/projectcalico/vpp-dataplane/{{vppbranch}}/yaml/generated/calico-vpp-nohuge.yaml
 ```
@@ -288,7 +284,7 @@ Then locate the `calico-vpp-config` ConfigMap in this yaml manifest and configur
 - `vpp_dataplane_interface` is the primary interface that VPP will use. It must be the name of a Linux interface, up and configured with an address. The address configured on this interface **must** be the node address in Kubernetes (`kubectl get nodes -o wide`).
 - `service_prefix` is the Kubernetes service CIDR. You can retrieve it by running:
 
-```bash-plain-text
+```batch
 kubectl cluster-info dump | grep -m 1 service-cluster-ip-range
 ```
 
@@ -326,7 +322,7 @@ data:
 
 To apply the configuration, run:
 
-```bash-plain-text
+```batch
 kubectl apply -f calico-vpp.yaml
 ```
 

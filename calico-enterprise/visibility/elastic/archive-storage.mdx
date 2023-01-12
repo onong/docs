@@ -60,7 +60,7 @@ This how-to guide uses the following {{prodname}} features:
    This can be done during installation by editing the custom-resources.yaml
    by applying it, or after installation by editing the resource with the command:
 
-   ```bash-plain-text
+   ```batch
    kubectl edit logcollector tigera-secure
    ```
 
@@ -91,7 +91,7 @@ This how-to guide uses the following {{prodname}} features:
          - IDSEvents
    ```
    This can be done during installation by editing the custom-resources.yaml by applying it or after installation by editing the resource with the command:
-   ```bash-plain-text
+   ```batch
    kubectl edit logcollector tigera-secure
    ```
 2. You can control which types of {{prodname}} log data you would like to send to syslog.
@@ -148,7 +148,7 @@ This how-to guide uses the following {{prodname}} features:
 
    :::
 
-   ```bash-plain-text
+   ```batch
    kubectl create configmap syslog-ca --from-file=tls.crt -n tigera-operator
    ```
 

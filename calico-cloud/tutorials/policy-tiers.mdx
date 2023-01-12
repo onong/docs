@@ -45,7 +45,7 @@ spec:
   order: 300
 ```
 
-```bash-plain-text
+```batch
 kubectl apply -f security.yaml
 ```
 
@@ -68,11 +68,7 @@ System tiers are added during installation and are hidden by default.
 - **allow-tigera** - contains component policies
 - **tigera-security** - contains threat protection policies
 
-:::caution
-
-Do not modify these tiers or change their order. Create all of your tiers after `allow-tigera` and `tigera-security`.
-
-:::
+> **Important!** Do not modify these tiers or change their order. Create all of your tiers after `allow-tigera` and `tigera-security`.
 
 ## Moving tiers
 

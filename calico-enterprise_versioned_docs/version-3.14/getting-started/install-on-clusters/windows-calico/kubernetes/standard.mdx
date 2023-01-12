@@ -81,7 +81,7 @@ To get around this for `kube-proxy`:
 
 1. Use `kubectl` to retrieve the DaemonSet.
 
-   ```bash-plain-text
+   ```batch
    kubectl get ds kube-proxy -n kube-system -o yaml > kube-proxy.yaml
    ```
 
@@ -99,7 +99,7 @@ To get around this for `kube-proxy`:
 
 1. Apply the updated manifest.
 
-   ```bash-plain-text
+   ```batch
    kubectl apply -f kube-proxy.yaml
    ```
 
@@ -209,13 +209,13 @@ The script will pause at the first stage until {{prodname}} is installed by foll
 
    If you do apply the manifest with the incorrect value, changing the manifest and re-applying will have no effect. To adjust the already-created IP pool:
 
-   ```bash-plain-text
+   ```batch
    kubectl get ippool -o yaml > ippool.yaml
    ```
 
    Then, modify ippool.yaml by setting the `ipipMode` to `Never` and then apply the updated manifest:
 
-   ```bash-plain-text
+   ```batch
    kubectl apply -f ippool.yaml
    ```
 
@@ -228,19 +228,19 @@ The script will pause at the first stage until {{prodname}} is installed by foll
 
 1. Apply the manifest using `kubectl`, and verify that you have a single pool with `VXLANMODE Always`.
 
-   ```bash-plain-text
+   ```batch
    kubectl get ippool -o wide
    ```
 
 1. Disable BGP routing by updating the Installation instance:
-   ```bash-plain-text
+   ```batch
    kubectl patch installation default --type=merge -p '{"spec": {"calicoNetwork": {"bgp": "Disabled"}}}'
    ```
 
 For Linux control nodes using {{prodname}} networking, strict affinity must be set to `true`.
 This is required to prevent Linux nodes from borrowing IP addresses from Windows nodes:
 
-```bash-plain-text
+```batch
 calicoctl ipam configure --strictaffinity=true
 ```
 

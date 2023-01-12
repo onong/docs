@@ -22,7 +22,7 @@ export default function CliConfigIntro(props) {
             with commands that require datastore access. The file can be in either YAML or JSON format. It must be valid
             and readable by <code>{props.cli}</code>. A YAML example follows.
           </p>
-          <CodeBlock>
+          <CodeBlock language='yaml'>
             {`apiVersion: projectcalico.org/v3
 kind: CalicoAPIConfig
 metadata:

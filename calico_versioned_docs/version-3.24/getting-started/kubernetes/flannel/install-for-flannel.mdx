@@ -41,7 +41,7 @@ The procedure differs according to your datastore type. Refer to the section tha
 
 1. Download the flannel networking manifest for the Kubernetes API datastore.
 
-   ```bash-plain-text
+   ```batch
    curl {{releases.0.manifests_url}}/manifests/canal.yaml -O
    ```
 
@@ -49,7 +49,7 @@ The procedure differs according to your datastore type. Refer to the section tha
 
 1. Issue the following command to install {{prodname}}.
 
-   ```bash-plain-text
+   ```batch
    kubectl apply -f canal.yaml
    ```
 
@@ -70,7 +70,7 @@ etcd, complete the following steps.
 
 1. Download the {{prodname}} networking manifest.
 
-   ```bash-plain-text
+   ```batch
    curl {{releases.0.manifests_url}}/manifests/canal-etcd.yaml -O
    ```
 
@@ -87,7 +87,7 @@ etcd, complete the following steps.
 
 1. Apply the manifest using the following command.
 
-   ```bash-plain-text
+   ```batch
    kubectl apply -f canal-etcd.yaml
    ```
 

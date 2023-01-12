@@ -77,7 +77,7 @@ kubectl patch deployment -n tigera-prometheus calico-prometheus-operator \\
               Download the Tigera custom resources. For more information on configuration options available in this
               manifest, see <Link href={`${baseUrl}/reference/installation/api`}>the installation reference</Link>.
             </p>
-            <CodeBlock language='bash-plain-text'>curl -O -L {filesUrl}/manifests/custom-resources.yaml</CodeBlock>
+            <CodeBlock language='batch'>curl -O -L {filesUrl}/manifests/custom-resources.yaml</CodeBlock>
             <p>
               Remove the <code>Manager</code> custom resource from the manifest file.
             </p>
@@ -105,7 +105,7 @@ spec:
     count: 1`}
             </CodeBlock>
             <p>Now apply the modified manifest.</p>
-            <CodeBlock language='bash-plain-text'>kubectl create -f ./custom-resources.yaml</CodeBlock>
+            <CodeBlock language='batch'>kubectl create -f ./custom-resources.yaml</CodeBlock>
           </li>
         )}
         {maybeRender(
@@ -140,6 +140,17 @@ spec:
           </CodeBlock>
           <p>You can now monitor progress with the following command:</p>
           <CodeBlock>watch kubectl get tigerastatus</CodeBlock>
+          <p>
+            When all components show a status of <code>Available</code>, proceed to the next section.
+          </p>
+          <Heading
+            as='h4'
+            id={`secure-${prodnamedash}-with-network-policy`}
+          >
+            Secure {prodname} with network policy
+          </Heading>
+          <p>Install the following network policies to secure {prodname} component communications.</p>
+          <CodeBlock>kubectl create -f {filesUrl}/manifests/tigera-policies.yaml</CodeBlock>
         </>
       )}
       {maybeRender(
@@ -167,7 +178,7 @@ spec:
                 </Link>
                 . Apply the following service manifest.
               </p>
-              <CodeBlock language='bash-plain-text'>
+              <CodeBlock language='batch'>
                 {`kubectl create -f - <<EOF
 apiVersion: v1
 kind: Service
@@ -202,7 +213,7 @@ EOF`}
                 </Link>{' '}
                 CR.
               </p>
-              <CodeBlock language='bash-plain-text'>
+              <CodeBlock language='batch'>
                 {`kubectl apply -f - <<EOF
 apiVersion: operator.tigera.io/v1
 kind: ManagementCluster
@@ -230,7 +241,7 @@ EOF`}
                 Create an admin user called, <code>mcm-user</code> in the default namespace with full permissions, by
                 applying the following commands.
               </p>
-              <CodeBlock language='bash-plain-text'>
+              <CodeBlock language='batch'>
                 kubectl create sa mcm-user{'\n'}
                 kubectl create clusterrolebinding mcm-user-admin --serviceaccount=default:mcm-user
                 --clusterrole=tigera-network-admin
@@ -238,7 +249,7 @@ EOF`}
             </li>
             <li>
               <p>Get the login token for your new admin user, and log in to {prodname} Manager.</p>
-              <CodeBlock language='bash-plain-text'>
+              <CodeBlock language='batch'>
                 {`kubectl get secret $(kubectl get serviceaccount mcm-user -o jsonpath='{range .secrets[*]}{.name}{"\n"}{end}' | grep token) -o go-template='{{.data.token | base64decode}}' && echo`}
               </CodeBlock>
               <p>
@@ -274,7 +285,7 @@ EOF`}
             Let&#39;s define admin-level permissions for the service account (<code>mcm-user</code>) we created to log
             in to the Manager UI. Run the following command against your managed cluster.
           </p>
-          <CodeBlock language='bash-plain-text'>
+          <CodeBlock language='batch'>
             kubectl create clusterrolebinding mcm-user-admin --serviceaccount=default:mcm-user
             --clusterrole=tigera-network-admin
           </CodeBlock>

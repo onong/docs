@@ -2,8 +2,6 @@ import React from 'react';
 
 import Link from '@docusaurus/Link';
 
-import Highlight from '@site/src/components/utils/Highlight';
-
 import { prodname, prodnameWindows, baseUrl } from '../../variables';
 
 export default function InstallOpenshiftBeforeYouBegin(props) {
@@ -75,7 +73,7 @@ export default function InstallOpenshiftBeforeYouBegin(props) {
             <p>
               Due to an <Link href='https://bugzilla.redhat.com/show_bug.cgi?id=1768858'>upstream issue</Link>, Windows
               pods can only be run in specific namespaces if you disable SCC. To do this, label the namespace with{' '}
-              <Highlight>openshift.io/run-level: &quot;1&quot;</Highlight>.
+              <code>openshift.io/run-level: &quot;1&quot;</code>.
             </p>
           </>
         )}

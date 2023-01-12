@@ -226,16 +226,6 @@ function NetworkRequirementsEnt(props) {
             <td>UDP 4789</td>
           </tr>
           <tr className='even'>
-            <td></td>
-            <td>Wireguard</td>
-            <td>UDP 51820 (default)</td>
-          </tr>
-          <tr className='odd'>
-            <td></td>
-            <td>IPv6 Wireguard</td>
-            <td>UDP 51821 (default)</td>
-          </tr>
-          <tr className='even'>
             <td>
               <strong>Cluster scaling</strong>
             </td>

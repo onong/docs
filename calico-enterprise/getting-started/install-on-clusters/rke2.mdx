@@ -51,9 +51,15 @@ The geeky details of what you get:
 
 1. [Configure a storage class for {{prodname}}.](../../operations/logstorage/create-storage.mdx).
 
+1. For RKE2 [CIS hardened clusters](https://docs.rke2.io/security/hardening_guide) with v1.24 or earlier, if the Tigera operator PSP is not installed, add it now.
+
+   ```batch
+   kubectl create -f {{filesUrl}}/manifests/psp-tigera-operator.yaml
+   ```
+
 1. Install the Tigera operator and custom resource definitions.
 
-   ```bash-plain-text
+   ```batch
    kubectl create -f {{filesUrl}}/manifests/tigera-operator.yaml
    ```
 
@@ -65,7 +71,7 @@ The geeky details of what you get:
 
    :::
 
-   ```bash-plain-text
+   ```batch
    kubectl create -f {{filesUrl}}/manifests/tigera-prometheus-operator.yaml
    ```
 
@@ -73,7 +79,7 @@ The geeky details of what you get:
 
    If pulling images directly from `quay.io/tigera`, you can use the credentials provided to you by your Tigera support representative. If using a private registry, use your private registry credentials instead.
 
-   ```bash-plain-text
+   ```batch
    kubectl create secret generic tigera-pull-secret \
        --type=kubernetes.io/dockerconfigjson -n tigera-operator \
        --from-file=.dockerconfigjson=<path/to/pull/secret>
@@ -81,7 +87,7 @@ The geeky details of what you get:
 
    For the Prometheus operator, create the pull secret in the `tigera-prometheus` namespace and then patch the deployment.
 
-   ```bash-plain-text
+   ```batch
    kubectl create secret generic tigera-pull-secret \
        --type=kubernetes.io/dockerconfigjson -n tigera-prometheus \
        --from-file=.dockerconfigjson=<path/to/pull/secret>
@@ -93,13 +99,13 @@ The geeky details of what you get:
 
 1. Install the Tigera custom resources. For more information on configuration options available, see [the installation reference](../../reference/installation/api.mdx).
 
-   ```bash-plain-text
+   ```batch
    kubectl create -f {{filesUrl}}/manifests/rancher/custom-resources-rke2.yaml
    ```
 
    Monitor progress with the following command:
 
-   ```bash-plain-text
+   ```batch
    watch kubectl get tigerastatus
    ```
 
@@ -107,13 +113,13 @@ The geeky details of what you get:
 
 ### Install the {{prodname}} license
 
-```bash-plain-text
+```batch
 kubectl create -f </path/to/license.yaml>
 ```
 
 Monitor progress with the following command:
 
-```bash-plain-text
+```batch
 watch kubectl get tigerastatus
 ```
 

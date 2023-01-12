@@ -84,7 +84,7 @@ Remember to change `serverip` and `mytoken`.
 
 :::
 
-```bash-plain-text
+```batch
 curl -sfL https://get.k3s.io | K3S_URL=https://serverip:6443 K3S_TOKEN=mytoken sh -
 ```
 
@@ -95,13 +95,13 @@ curl -sfL https://get.k3s.io | K3S_URL=https://serverip:6443 K3S_TOKEN=mytoken s
 
 Install the {{prodname}} operator and custom resource definitions.
 
-```bash-plain-text
+```batch
 kubectl create -f {{releases.0.manifests_url}}/manifests/tigera-operator.yaml
 ```
 
 Install {{prodname}} by creating the necessary custom resource. For more information on configuration options available in this manifest, see [the installation reference](../../../reference/installation/api.mdx).
 
-```bash-plain-text
+```batch
 kubectl create -f {{releases.0.manifests_url}}/manifests/custom-resources.yaml
 ```
 
@@ -117,7 +117,7 @@ you may need to change the default IP pool CIDR to match your pod network CIDR.
 
 Install {{prodname}} by using the following command.
 
-```bash-plain-text
+```batch
 kubectl apply -f {{releases.0.manifests_url}}/manifests/calico.yaml
 ```
 
@@ -195,7 +195,7 @@ kube-system   coredns-8655855d6-blzl5                    1/1     Running   0    
 
 1. Confirm that you now have two nodes in your cluster with the following command.
 
-   ```bash-plain-text
+   ```batch
    kubectl get nodes -o wide
    ```
 

@@ -31,13 +31,13 @@ Admission controllers in Kubernetes intercept requests to the Kubernetes API and
 
    **Standard install PSPs**
 
-   ```bash-plain-text
+   ```batch
    curl -O {{filesUrl}}/manifests/tigera-psp.yaml
    ```
 
    **Additional PSPs if using multi-cluster management**
 
-   ```bash-plain-text
+   ```batch
    curl -O {{filesUrl}}/manifests/psp-guardian.yaml
    ```
 
@@ -55,13 +55,13 @@ Admission controllers in Kubernetes intercept requests to the Kubernetes API and
 
    :::
 
-   ```bash-plain-text
+   ```batch
     curl -O {{filesUrl}}/manifests/psp-l7-collector.yaml
    ```
 
    **PSPs for the third-party [ingress controller](https://docs.tigera.io/security/advanced-policy)**
 
-   ```bash-plain-text
+   ```batch
    curl -O {{filesUrl}}/manifests/psp-ingress-collector.yaml
    ```
 

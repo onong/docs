@@ -28,12 +28,13 @@ The following list shows the platforms supported in this release. The tables pro
 
 ### Supported {{prodname}} features
 
-If your platform is listed below, the features in this release will work for your platform unless an individual feature topic explicitly calls out a vendor or {{prodname}} limitation. However, all Windows feature limitations are described in [Windows limitations](install-on-clusters/windows-calico/limitations.mdx), and are not called out in individual Linux topics.
-{: .alert .alert-info}
+If your platform is listed below, the features in this release will work for your platform unless an individual feature topic explicitly calls out a vendor or {{prodname}} limitation.
+
+Note that all Windows feature limitations are described in [Windows limitations](install-on-clusters/windows-calico/limitations.mdx), and are not called out in individual Linux topics.
 
 ## AKS
 
-Kubernetes version support aligns with upstream Kubernetes to the latest version if available.
+Kubernetes version support aligns with [upstream Kubernetes](#kubernetes-kubeadm) to the latest version if available.
 
 | {{prodname}} version | {{prodname}} support                                                                     |
 | -------------------- | ---------------------------------------------------------------------------------------- |
@@ -51,7 +52,7 @@ Kubernetes version support aligns with upstream Kubernetes to the latest version
 
 ## EKS
 
-Kubernetes version support aligns with upstream Kubernetes to the latest version if available.
+Kubernetes version support aligns with [upstream Kubernetes](#kubernetes-kubeadm) to the latest version if available.
 
 | {{prodname}} version | {{prodname}} support                                                                   |
 | -------------------- | -------------------------------------------------------------------------------------- |
@@ -69,7 +70,7 @@ Kubernetes version support aligns with upstream Kubernetes to the latest version
 
 ## GKE
 
-Kubernetes version support aligns with upstream Kubernetes to the latest version if available.
+Kubernetes version support aligns with [upstream Kubernetes](#kubernetes-kubeadm) to the latest version if available.
 
 | {{prodname}} version | {{prodname}} support                       |
 | -------------------- | ------------------------------------------ |
@@ -120,7 +121,7 @@ Kubernetes version support aligns with upstream Kubernetes to the latest version
 
 | {{prodname}} version | MKE version                          | {{prodname}} support                 | Kubernetes versions |
 | -------------------- | ------------------------------------ | ------------------------------------ | ------------------- |
-| 3.15                 | MKE 3.5                              | {{prodname}} CNI with network policy | 1.21                |
+| 3.15                 | MKE 3.6                              | {{prodname}} CNI with network policy | 1.24                |
 | 3.14                 | MKE 3.5                              | {{prodname}} CNI with network policy | 1.21                |
 | 3.13                 | MKE 3.5                              | {{prodname}} CNI with network policy | 1.21                |
 | 3.12                 | MKE 3.5                              | {{prodname}} CNI with network policy | 1.21                |

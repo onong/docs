@@ -51,19 +51,19 @@ Before applying `tigera-operator.yaml`, modify registry references to use your c
 
 Download all manifests first, then modify the following:
 
-```bash-plain-text
+```batch
 sed -ie "s?quay.io?$REGISTRY?g" manifests/02-tigera-operator.yaml
 ```
 
 **For all other platforms**
 
-```bash-plain-text
+```batch
 sed -ie "s?quay.io?$REGISTRY?g" tigera-operator.yaml
 ```
 
 Next, if you are implementing user authentication to access a private registry, add the image pull secret for your `registry` to the secret `tigera-pull-secret`.
 
-```bash-plain-text
+```batch
 sed -ie "/serviceAccountName: tigera-operator/a \      imagePullSecrets:\n\      - name: $REGISTRY_PULL_SECRET"  tigera-operator.yaml
 ```
 

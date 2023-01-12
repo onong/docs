@@ -51,15 +51,10 @@ If you would like to use `kubectl` to manage `projectcalico.org/v3` API resource
 
 :::
 
-:::caution
-
-Never modify resources in the `crd.projectcalico.org` API group directly. These are internal data representations
-and modifying them directly may result in unexpected behavior.
-
-:::
-
-In addition to resource management, `calicoctl` also enables other {{prodname}} administrative tasks such as viewing IP pool utilization
-and BGP status.
+> **Warning**: Never modify resources in the `crd.projectcalico.org` API group directly. These are internal data representations
+> and modifying them directly may result in unexpected behavior.
+> In addition to resource management, `calicoctl` also enables other {{prodname}} administrative tasks such as viewing IP pool utilization
+> and BGP status.
 
 ### Datastore
 
@@ -107,7 +102,7 @@ Make sure you always install the version of `calicoctl` that matches the version
 
 1. Set the file to be executable.
 
-   ```bash-plain-text
+   ```batch
    chmod +x ./calicoctl
    ```
 
@@ -138,7 +133,7 @@ Make sure you always install the version of `calicoctl` that matches the version
 
 1. Set the file to be executable.
 
-   ```bash-plain-text
+   ```batch
    chmod +x calicoctl
    ```
 
@@ -190,7 +185,7 @@ Make sure you always install the version of `calicoctl` that matches the version
 
 1. Set the file to be executable.
 
-   ```bash-plain-text
+   ```batch
    chmod +x calicoctl
    ```
 
@@ -221,7 +216,7 @@ Make sure you always install the version of `calicoctl` that matches the version
 
 1. Set the file to be executable.
 
-   ```bash-plain-text
+   ```batch
    chmod +x calicoctl
    ```
 
@@ -257,7 +252,7 @@ Make sure you always install the version of `calicoctl` that matches the version
 
 1. Set the file to be executable.
 
-   ```bash-plain-text
+   ```batch
    chmod +x kubectl-calico
    ```
 
@@ -288,7 +283,7 @@ Make sure you always install the version of `calicoctl` that matches the version
 
 1. Set the file to be executable.
 
-   ```bash-plain-text
+   ```batch
    chmod +x kubectl-calico
    ```
 
@@ -336,7 +331,7 @@ Make sure you always install the version of `calicoctl` that matches the version
 
 1. Set the file to be executable.
 
-   ```bash-plain-text
+   ```batch
    chmod +x kubectl-calico
    ```
 
@@ -367,7 +362,7 @@ Make sure you always install the version of `calicoctl` that matches the version
 
 1. Set the file to be executable.
 
-   ```bash-plain-text
+   ```batch
    chmod +x kubectl-calico
    ```
 
@@ -402,7 +397,7 @@ the node related subcommands will not work (like node status).
 To install `calicoctl` as a container on a single host, log into the
 target host and issue the following command.
 
-```bash-plain-text
+```batch
 docker pull {{registry}}{{imageNames.calicoctl}}:{{releases.0.title}}
 ```
 
@@ -412,7 +407,7 @@ Use the YAML that matches your datastore type to deploy the `calicoctl` containe
 
 - **etcd**
 
-  ```bash-plain-text
+  ```batch
   kubectl apply -f {{releases.0.manifests_url}}/manifests/calicoctl-etcd.yaml
   ```
 
@@ -425,7 +420,7 @@ Use the YAML that matches your datastore type to deploy the `calicoctl` containe
 
 - **Kubernetes API datastore**
 
-  ```bash-plain-text
+  ```batch
   kubectl apply -f {{releases.0.manifests_url}}/manifests/calicoctl.yaml
   ```
 
@@ -438,7 +433,7 @@ Use the YAML that matches your datastore type to deploy the `calicoctl` containe
 
 You can then run commands using kubectl as shown below.
 
-```bash-plain-text
+```batch
 kubectl exec -ti -n kube-system calicoctl -- /calicoctl get profiles -o wide
 ```
 
@@ -452,7 +447,7 @@ kns.kube-system      kns.kube-system
 
 We recommend setting an alias as follows.
 
-```bash-plain-text
+```batch
 alias calicoctl="kubectl exec -i -n kube-system calicoctl -- /calicoctl"
 ```
 
@@ -461,7 +456,7 @@ alias calicoctl="kubectl exec -i -n kube-system calicoctl -- /calicoctl"
 In order to use the `calicoctl` alias
 when reading manifests, redirect the file into stdin, for example:
 
-```bash-plain-text
+```batch
 calicoctl create -f - < my_manifest.yaml
 ```
 

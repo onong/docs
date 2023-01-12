@@ -281,13 +281,13 @@ a global setting and a per-host override.
 
 1. Get the current felixconfig settings.
 
-   ```bash-plain-text
+   ```batch
    calicoctl get felixconfig default -o yaml --export > felix.yaml
    ```
 
 1. Modify logFilePath to your intended path, e.g. "/tmp/felix.log"
 
-   ```bash-plain-text
+   ```batch
    vim felix.yaml
    ```
 
@@ -300,7 +300,7 @@ a global setting and a per-host override.
 
 1. Replace the current felixconfig settings
 
-   ```bash-plain-text
+   ```batch
    calicoctl replace -f felix.yaml
    ```
 

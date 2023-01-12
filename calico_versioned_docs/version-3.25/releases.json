@@ -1,0 +1,59 @@
+[
+  {
+    "title": "v3.25.0-pre",
+    "note": "",
+    "manifests_url": "https://raw.githubusercontent.com/projectcalico/calico/release-v3.25",
+    "chart": {
+      "version": 0
+    },
+    "tigera-operator": {
+      "image": "tigera/operator",
+      "registry": "quay.io",
+      "version": "release-v3.25"
+    },
+    "components": {
+      "typha": {
+        "version": "release-v3.25"
+      },
+      "calicoctl": {
+        "version": "release-v3.25"
+      },
+      "calico/node": {
+        "version": "release-v3.25"
+      },
+      "calico/cni": {
+        "version": "release-v3.25"
+      },
+      "calico/apiserver": {
+        "version": "release-v3.25"
+      },
+      "calico/kube-controllers": {
+        "version": "release-v3.25"
+      },
+      "calico/flannel-migration-controller": {
+        "version": "release-v3.25"
+      },
+      "calico/windows": {
+        "version": "release-v3.25"
+      },
+      "networking-calico": {
+        "version": "release-v3.25"
+      },
+      "flannel": {
+        "version": "v0.16.3"
+      },
+      "calico/dikastes": {
+        "version": "release-v3.25"
+      },
+      "flexvol": {
+        "version": "release-v3.25"
+      },
+      "csi-driver": {
+        "version": "release-v3.25"
+      },
+      "csi-node-driver-registrar": {
+        "version": "release-v3.25"
+      }
+    }
+  }
+]

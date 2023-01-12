@@ -20,7 +20,7 @@ arbitrary name required for endpoint identification.
 When running this command, replace the placeholders in angle brackets with
 appropriate values for your deployment.
 
-```bash-plain-text
+```batch
 calicoctl create -f - <<EOF
 - apiVersion: projectcalico.org/v3
   kind: HostEndpoint
@@ -57,20 +57,15 @@ key/value pairs that can be used in selector expressions.
 
 <!-- TODO(smc) data-model: Link to new data model docs. -->
 
-:::caution
+> **Important**: When rendering security rules on other hosts, {{prodname}} uses the
+> `expectedIPs` field to resolve label selectors
+> to IP addresses. If the `expectedIPs` field is omitted
+> then security rules that use labels will fail to match
+> this endpoint.
+> Or, if you knew that the IP address should be 10.0.0.1, but not the name
+> of the interface:
 
-When rendering security rules on other hosts, {{prodname}} uses the
-`expectedIPs` field to resolve label selectors
-to IP addresses. If the `expectedIPs` field is omitted
-then security rules that use labels will fail to match
-this endpoint.
-
-:::
-
-Or, if you knew that the IP address should be 10.0.0.1, but not the name
-of the interface:
-
-```bash-plain-text
+```batch
 calicoctl create -f - <<EOF
 - apiVersion: projectcalico.org/v3
   kind: HostEndpoint
@@ -106,7 +101,7 @@ error at `WARNING` level and it will ignore the endpoint:
 A `grep` through the Felix logs for the string "Validation failed" should allow
 you to locate the error.
 
-```bash-plain-text
+```batch
 grep "Validation failed" /var/log/calico/felix.log
 ```
 

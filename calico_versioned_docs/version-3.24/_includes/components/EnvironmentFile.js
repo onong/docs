@@ -6,8 +6,6 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Link from '@docusaurus/Link';
 
-import Highlight from '@site/src/components/utils/Highlight';
-
 import { prodname, baseUrl } from '../../variables';
 
 export default function EnvironmentFile(props) {
@@ -55,7 +53,7 @@ export default function EnvironmentFile(props) {
               <tr>
                 <td>FELIX_DATASTORETYPE</td>
                 <td>
-                  Set to <Highlight>kubernetes</Highlight>
+                  Set to <code>kubernetes</code>
                 </td>
               </tr>
               <tr>
@@ -87,7 +85,7 @@ export default function EnvironmentFile(props) {
               <tr>
                 <td>{datastore_type}</td>
                 <td>
-                  Set to <Highlight>etcdv3</Highlight>
+                  Set to <code>etcdv3</code>
                 </td>
               </tr>
               <tr>
@@ -145,9 +143,9 @@ export default function EnvironmentFile(props) {
                   IP addresses for this node—these can be configured through the Node resource. If no next hop addresses
                   are configured, {prodname} automatically determines an IPv4 next hop address by querying the host
                   interfaces (and configures this value in the Node resource). You can set CALICO_IP to{' '}
-                  <Highlight>autodetect</Highlight> for force auto-detection of IP address every time the node starts.
-                  If you set IP addresses through these environment variables, it reconfigures any values currently set
-                  through the Node resource.
+                  <code>autodetect</code> for force auto-detection of IP address every time the node starts. If you set
+                  IP addresses through these environment variables, it reconfigures any values currently set through the
+                  Node resource.
                 </td>
               </tr>
               <tr>
@@ -169,18 +167,18 @@ export default function EnvironmentFile(props) {
               <tr>
                 <td>CALICO_NETWORKING_BACKEND</td>
                 <td>
-                  The networking backend to use. In <Highlight>bird</Highlight> mode, Calico will provide BGP networking
-                  using the BIRD BGP daemon; VXLAN networking can also be used. In <Highlight>vxlan</Highlight> mode,
-                  only VXLAN networking is provided; BIRD and BGP are disabled. If you want to run Calico for policy
-                  only, set to <Highlight>none</Highlight>.
+                  The networking backend to use. In <code>bird</code> mode, Calico will provide BGP networking using the
+                  BIRD BGP daemon; VXLAN networking can also be used. In <code>vxlan</code> mode, only VXLAN networking
+                  is provided; BIRD and BGP are disabled. If you want to run Calico for policy only, set to{' '}
+                  <code>none</code>.
                 </td>
               </tr>
             </tbody>
           </table>
           <p>
-            Sample <Highlight>EnvironmentFile</Highlight> - save to <Highlight>/etc/calico/calico.env</Highlight>
+            Sample <code>EnvironmentFile</code> - save to <code>/etc/calico/calico.env</code>
           </p>
-          <CodeBlock language='bash-plain-text'>
+          <CodeBlock language='batch'>
             {`${datastore_type}=etcdv3
 ${etcd_endpoints}=https://calico-datastore.example.com:2379
 ${etcd_ca_file}="/pki/ca.pem"

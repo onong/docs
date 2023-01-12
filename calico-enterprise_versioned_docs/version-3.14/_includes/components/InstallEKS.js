@@ -5,7 +5,6 @@ import Link from '@docusaurus/Link';
 import Admonition from '@theme/Admonition';
 import Heading from '@theme/Heading';
 
-import Highlight from '@site/src/components/utils/Highlight';
 import GeekDetails from '@site/src/components/partials/GeekDetails';
 
 import ConfigureManagedCluster from './ConfigureManagedCluster';
@@ -80,9 +79,9 @@ export default function InstallEKS(props) {
         <li>
           <p>Install your pull secret.</p>
           <p>
-            If pulling images directly from <Highlight>quay.io/tigera</Highlight>, you will likely want to use the
-            credentials provided to you by your Tigera support representative. If using a private registry, use your
-            private registry credentials instead.
+            If pulling images directly from <code>quay.io/tigera</code>, you will likely want to use the credentials
+            provided to you by your Tigera support representative. If using a private registry, use your private
+            registry credentials instead.
           </p>
           <CodeBlock>
             {`kubectl create secret generic tigera-pull-secret \\
@@ -90,8 +89,8 @@ export default function InstallEKS(props) {
     --from-file=.dockerconfigjson=<path/to/pull/secret>`}
           </CodeBlock>
           <p>
-            For the Prometheus operator, create the pull secret in the <Highlight>tigera-prometheus</Highlight>{' '}
-            namespace and then patch the deployment.
+            For the Prometheus operator, create the pull secret in the <code>tigera-prometheus</code> namespace and then
+            patch the deployment.
           </p>
           <CodeBlock>
             {`kubectl create secret generic tigera-pull-secret \\
@@ -114,11 +113,9 @@ kubectl patch deployment -n tigera-prometheus calico-prometheus-operator \\
                 Download the Tigera custom resources. For more information on configuration options available in this
                 manifest, see <Link href={`${baseUrl}/reference/installation/api`}>the installation reference</Link>.
               </p>
-              <CodeBlock language='bash-plain-text'>
-                curl -O -L {filesUrl}/manifests/eks/custom-resources.yaml
-              </CodeBlock>
+              <CodeBlock language='batch'>curl -O -L {filesUrl}/manifests/eks/custom-resources.yaml</CodeBlock>
               <p>
-                Remove the <Highlight>Manager</Highlight> custom resource from the manifest file.
+                Remove the <code>Manager</code> custom resource from the manifest file.
               </p>
               <CodeBlock language='yaml'>
                 {`apiVersion: operator.tigera.io/v1
@@ -132,7 +129,7 @@ spec:
     type: Token`}
               </CodeBlock>
               <p>
-                Remove the <Highlight>LogStorage</Highlight> custom resource from the manifest file.
+                Remove the <code>LogStorage</code> custom resource from the manifest file.
               </p>
               <CodeBlock language='yaml'>
                 {`apiVersion: operator.tigera.io/v1
@@ -144,14 +141,14 @@ spec:
     count: 1`}
               </CodeBlock>
               <p>Now apply the modified manifest.</p>
-              <CodeBlock language='bash-plain-text'>kubectl create -f ./custom-resources.yaml</CodeBlock>
+              <CodeBlock language='batch'>kubectl create -f ./custom-resources.yaml</CodeBlock>
             </li>
             <li>
               <p>Monitor progress with the following command:</p>
-              <CodeBlock language='bash-plain-text'>watch kubectl get tigerastatus</CodeBlock>
+              <CodeBlock language='batch'>watch kubectl get tigerastatus</CodeBlock>
               <p>
-                Wait until the <Highlight>apiserver</Highlight> shows a status of <Highlight>Available</Highlight>, then
-                proceed to the next section.
+                Wait until the <code>apiserver</code> shows a status of <code>Available</code>, then proceed to the next
+                section.
               </p>
             </li>
           </>
@@ -165,8 +162,8 @@ spec:
             <p>You can now monitor progress with the following command:</p>
             <CodeBlock>watch kubectl get tigerastatus</CodeBlock>
             <p>
-              Wait until the <Highlight>apiserver</Highlight> shows a status of <Highlight>Available</Highlight>, then
-              proceed to <Link href='#install-the-calico-enterprise-license'>install the {prodname} license</Link>.
+              Wait until the <code>apiserver</code> shows a status of <code>Available</code>, then proceed to{' '}
+              <Link href='#install-the-calico-enterprise-license'>install the {prodname} license</Link>.
             </p>
           </li>
         )}
@@ -188,7 +185,7 @@ spec:
         plane nodes will not be able to initiate network connections to {prodname} pods. (This is a general limitation
         of EKS's custom networking support, not specific to {prodname}.) As a workaround, trusted pods that require
         control plane nodes to connect to them, such as those implementing admission controller webhooks, can include{' '}
-        <Highlight>hostNetwork:true</Highlight> in their pod spec. See the Kuberentes API{' '}
+        <code>hostNetwork:true</code> in their pod spec. See the Kuberentes API{' '}
         <Link href='https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#podspec-v1-core'>
           pod spec
         </Link>{' '}
@@ -201,8 +198,8 @@ spec:
         Create an EKS cluster
       </Heading>
       <p>
-        For these instructions, we will use <Highlight>eksctl</Highlight> to provision the cluster. However, you can use
-        any of the methods in{' '}
+        For these instructions, we will use <code>eksctl</code> to provision the cluster. However, you can use any of
+        the methods in{' '}
         <Link href='https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html'>
           Getting Started with Amazon EKS
         </Link>
@@ -216,16 +213,14 @@ spec:
       <ol>
         <li>
           <p>First, create an Amazon EKS cluster without any nodes.</p>
-          <CodeBlock language='bash-plain-text'>
-            eksctl create cluster --name my-calico-cluster --without-nodegroup
-          </CodeBlock>
+          <CodeBlock language='batch'>eksctl create cluster --name my-calico-cluster --without-nodegroup</CodeBlock>
         </li>
         <li>
           <p>
-            Since this cluster will use {prodname} for networking, you must delete the <Highlight>aws-node</Highlight>{' '}
-            daemon set to disable AWS VPC networking for pods.
+            Since this cluster will use {prodname} for networking, you must delete the <code>aws-node</code> daemon set
+            to disable AWS VPC networking for pods.
           </p>
-          <CodeBlock language='bash-plain-text'>kubectl delete daemonset -n kube-system aws-node</CodeBlock>
+          <CodeBlock language='batch'>kubectl delete daemonset -n kube-system aws-node</CodeBlock>
         </li>
       </ol>
       <Heading
@@ -260,9 +255,9 @@ spec:
         <li>
           <p>Install your pull secret.</p>
           <p>
-            If pulling images directly from <Highlight>quay.io/tigera</Highlight>, you will likely want to use the
-            credentials provided to you by your Tigera support representative. If using a private registry, use your
-            private registry credentials instead.
+            If pulling images directly from <code>quay.io/tigera</code>, you will likely want to use the credentials
+            provided to you by your Tigera support representative. If using a private registry, use your private
+            registry credentials instead.
           </p>
           <CodeBlock>
             {`kubectl create secret generic tigera-pull-secret \\
@@ -270,8 +265,8 @@ spec:
     --from-file=.dockerconfigjson=<path/to/pull/secret>`}
           </CodeBlock>
           <p>
-            For the Prometheus operator, create the pull secret in the <Highlight>tigera-prometheus</Highlight>{' '}
-            namespace and then patch the deployment.
+            For the Prometheus operator, create the pull secret in the <code>tigera-prometheus</code> namespace and then
+            patch the deployment.
           </p>
           <CodeBlock>
             {`kubectl create secret generic tigera-pull-secret \\
@@ -289,10 +284,10 @@ kubectl patch deployment -n tigera-prometheus calico-prometheus-operator \\
         </li>
         <li>
           <p>
-            To configure {prodname} for use with the Calico CNI plugin, we must create an{' '}
-            <Highlight>Installation</Highlight> resource that has <Highlight>spec.cni.type: Calico</Highlight>. Install
-            the <Highlight>custom-resources-calico-cni.yaml</Highlight> manifest, which includes this configuration. For
-            more information on configuration options available in this manifest, see{' '}
+            To configure {prodname} for use with the Calico CNI plugin, we must create an <code>Installation</code>{' '}
+            resource that has <code>spec.cni.type: Calico</code>. Install the{' '}
+            <code>custom-resources-calico-cni.yaml</code> manifest, which includes this configuration. For more
+            information on configuration options available in this manifest, see{' '}
             <Link href={`${baseUrl}/reference/installation/api`}>the installation reference</Link>.
           </p>
           {props.clusterType !== 'managed' && (
@@ -306,11 +301,11 @@ kubectl patch deployment -n tigera-prometheus calico-prometheus-operator \\
                 Download the Tigera custom resources. For more information on configuration options available in this
                 manifest, see <Link href={`${baseUrl}/reference/installation/api`}>the installation reference</Link>.
               </p>
-              <CodeBlock language='bash-plain-text'>
+              <CodeBlock language='batch'>
                 curl -O -L {filesUrl}/manifests/eks/custom-resources-calico-cni.yaml
               </CodeBlock>
               <p>
-                Remove the <Highlight>Manager</Highlight> custom resource from the manifest file.
+                Remove the <code>Manager</code> custom resource from the manifest file.
               </p>
               <CodeBlock language='yaml'>
                 {`apiVersion: operator.tigera.io/v1
@@ -324,7 +319,7 @@ spec:
     type: Token`}
               </CodeBlock>
               <p>
-                Remove the <Highlight>LogStorage</Highlight> custom resource from the manifest file.
+                Remove the <code>LogStorage</code> custom resource from the manifest file.
               </p>
               <CodeBlock language='yaml'>
                 {`apiVersion: operator.tigera.io/v1
@@ -336,27 +331,26 @@ spec:
     count: 1`}
               </CodeBlock>
               <p>Now apply the modified manifest.</p>
-              <CodeBlock language='bash-plain-text'>{`kubectl create -f ./custom-resources-calico-cni.yaml`}</CodeBlock>
+              <CodeBlock language='batch'>{`kubectl create -f ./custom-resources-calico-cni.yaml`}</CodeBlock>
             </li>
             <li>
               <p>Monitor progress with the following command:</p>
-              <CodeBlock language='bash-plain-text'>watch kubectl get tigerastatus</CodeBlock>
+              <CodeBlock language='batch'>watch kubectl get tigerastatus</CodeBlock>
             </li>
           </>
         )}
         <li>
           <p>Finally, add nodes to the cluster.</p>
-          <CodeBlock language='bash-plain-text'>
+          <CodeBlock language='batch'>
             {`eksctl create nodegroup --cluster my-calico-cluster --node-type t3.xlarge --node-ami auto --max-pods-per-node 100`}
           </CodeBlock>
           <blockquote>
             <p>
-              <strong>Tip</strong>: Without the <Highlight>--max-pods-per-node</Highlight> option above, EKS will limit
-              the{' '}
+              <strong>Tip</strong>: Without the <code>--max-pods-per-node</code> option above, EKS will limit the{' '}
               <Link href='https://github.com/awslabs/amazon-eks-ami/blob/master/files/eni-max-pods.txt'>
                 number of pods based on node-type
               </Link>
-              . See <Highlight>eksctl create nodegroup --help</Highlight> for the full set of node group options.
+              . See <code>eksctl create nodegroup --help</code> for the full set of node group options.
             </p>
           </blockquote>
         </li>
@@ -364,8 +358,8 @@ spec:
           <p>Monitor progress with the following command:</p>
           <CodeBlock>watch kubectl get tigerastatus</CodeBlock>
           <p>
-            Wait until the <Highlight>apiserver</Highlight> shows a status of <Highlight>Available</Highlight>, then
-            proceed to the next section.
+            Wait until the <code>apiserver</code> shows a status of <code>Available</code>, then proceed to the next
+            section.
           </p>
         </li>
       </ol>
@@ -381,6 +375,21 @@ spec:
           <CodeBlock>{`kubectl create -f </path/to/license.yaml>`}</CodeBlock>
           <p>You can now monitor progress with the following command:</p>
           <CodeBlock>watch kubectl get tigerastatus</CodeBlock>
+          <p>
+            When all components show a status of <code>Available</code>, proceed to the next section.
+          </p>
+        </>
+      )}
+      {props.clusterType !== 'managed' && (
+        <>
+          <Heading
+            as='h4'
+            id={`secure-${prodnamedash}-with-network-policy`}
+          >
+            Secure {prodname} with network policy
+          </Heading>
+          <p>To secure {prodname} component communications, install the following set of network policies.</p>
+          <CodeBlock>kubectl create -f {filesUrl}/manifests/tigera-policies.yaml</CodeBlock>
         </>
       )}
       {props.clusterType === 'management' && (
@@ -394,8 +403,8 @@ spec:
           <p>
             To control managed clusters from your central management plane, you must ensure it is reachable for
             connections. The simplest way to get started (but not for production scenarios), is to configure a{' '}
-            <Highlight>NodePort</Highlight> service to expose the management cluster. Note that the service must live
-            within the <Highlight>tigera-manager</Highlight> namespace.
+            <code>NodePort</code> service to expose the management cluster. Note that the service must live within the{' '}
+            <code>tigera-manager</code> namespace.
           </p>
           <ol>
             <li>
@@ -409,7 +418,7 @@ spec:
                 .
               </p>
               <p>Apply the following service manifest.</p>
-              <CodeBlock language='bash-plain-text'>
+              <CodeBlock language='batch'>
                 {`kubectl create -f - <<EOF
 apiVersion: v1
 kind: Service
@@ -433,7 +442,7 @@ EOF`}
                 Export the service port number, and the public IP or host of the management cluster. (Ex.
                 "example.com:1234" or "10.0.0.10:1234".)
               </p>
-              <CodeBlock language='bash-plain-text'>{`export MANAGEMENT_CLUSTER_ADDR=<your-management-cluster-addr>`}</CodeBlock>
+              <CodeBlock language='batch'>{`export MANAGEMENT_CLUSTER_ADDR=<your-management-cluster-addr>`}</CodeBlock>
             </li>
             <li>
               <p>
@@ -443,7 +452,7 @@ EOF`}
                 </Link>{' '}
                 CR.
               </p>
-              <CodeBlock language='bash-plain-text'>
+              <CodeBlock language='batch'>
                 {`kubectl apply -f - <<EOF
 apiVersion: operator.tigera.io/v1
 kind: ManagementCluster
@@ -468,22 +477,22 @@ EOF`}
           <ol>
             <li>
               <p>
-                Create an admin user called, <Highlight>mcm-user</Highlight> in the default namespace with full
-                permissions, by applying the following commands.
+                Create an admin user called, <code>mcm-user</code> in the default namespace with full permissions, by
+                applying the following commands.
               </p>
-              <CodeBlock language='bash-plain-text'>
+              <CodeBlock language='batch'>
                 {`kubectl create sa mcm-user
 kubectl create clusterrolebinding mcm-user-admin --serviceaccount=default:mcm-user --clusterrole=tigera-network-admin`}
               </CodeBlock>
             </li>
             <li>
               <p>Get the login token for your new admin user, and log in to {prodname} Manager.</p>
-              <CodeBlock language='bash-plain-text'>
+              <CodeBlock language='batch'>
                 {`kubectl get secret $(kubectl get serviceaccount mcm-user -o jsonpath='{range .secrets[*]}{.name}{"\n"}{end}' | grep token) -o go-template='{{.data.token | base64decode}}' && echo`}
               </CodeBlock>
               <p>
                 In the top right banner, your management cluster is displayed as the first entry in the cluster
-                selection drop-down menu with the fixed name, <Highlight>management cluster</Highlight>.
+                selection drop-down menu with the fixed name, <code>management cluster</code>.
               </p>
               <img
                 src='/img/calico-enterprise/mcm/mcm-management-cluster.png'
@@ -508,10 +517,10 @@ kubectl create clusterrolebinding mcm-user-admin --serviceaccount=default:mcm-us
             account used to log in must have appropriate permissions defined in the managed cluster.
           </p>
           <p>
-            Let's define admin-level permissions for the service account (<Highlight>mcm-user</Highlight>) we created to
-            log in to the Manager UI. Run the following command against your managed cluster.
+            Let's define admin-level permissions for the service account (<code>mcm-user</code>) we created to log in to
+            the Manager UI. Run the following command against your managed cluster.
           </p>
-          <CodeBlock language='bash-plain-text'>
+          <CodeBlock language='batch'>
             {`kubectl create clusterrolebinding mcm-user-admin --serviceaccount=default:mcm-user --clusterrole=tigera-network-admin`}
           </CodeBlock>
         </>

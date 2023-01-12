@@ -23,12 +23,8 @@ When using selectors in network policy, remember that selectors only match (know
 packets. A rule with a selector `all()` won't match "all packets", it will match "packets from all in-scope
 endpoints and network sets". To match all packets, do not include a selector in the rule at all.
 
-:::caution
-
-`notSelector` is somewhat subtle because the `not` in `notSelector` negates the packet match
-rather than the selector:
-
-- `selector: !has(foo)` matches packets from/to endpoints and network sets that do not have the label "foo".
-- `notSelector: has(foo)` matches packets from/to **anywhere** (including outside the cluster), **except** traffic from/to endpoints and network sets that have the label "foo".
-
-:::
+> **Important**: `notSelector` is somewhat subtle because the `not` in `notSelector` negates the packet match
+> rather than the selector:
+>
+> - `selector: !has(foo)` matches packets from/to endpoints and network sets that do not have the label "foo".
+> - `notSelector: has(foo)` matches packets from/to **anywhere** (including outside the cluster), **except** traffic from/to endpoints and network sets that have the label "foo".
